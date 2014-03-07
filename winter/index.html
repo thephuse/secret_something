@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" type="text/css" href="styles/style.css" />
   <link rel="stylesheet" type="text/css" href="styles/datepicker.css" />
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   
   <script type="text/javascript" src="//use.typekit.net/nmy4cph.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -29,7 +30,7 @@
   <div class="content">
     <h1>Secret Santa</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius velit vitae tellus pharetra, ut ornare risus bibendum. Vestibulum sagittis turpis mi, id rhoncus libero convallis et. Aenean bibendum, turpis quis vestibulum facilisis, elit neque venenatis erat, at lobortis turpis est eget enim.</p>
-    <p><a class="btn next" href="#">Get Started</a></p>
+    <p><a class="btn next" href="#"><span>Get Started</span></a></p>
   </div>
 </section>
 
@@ -40,14 +41,14 @@
       <p><input type="text" placeholder="Title"/></p>
       <p><input class="half" type="text" placeholder="Organizer's Name"/><input class="half datepicker" type="text" placeholder="Date"/></p>
       <p><textarea placeholder="Description" data-bind="value: description"/></textarea></p>
-      <p><a class="btn next" href="#">Continue</a></p>
+      <p><a class="btn next" href="#"><span>Continue</span></a></p>
     </form>
   </div>
 </section>
 
 <section>
   <div class="content">
-    <h2><em>Invite Members to</em> <span data-bind="text: description.length > 0 ? description : 'My Secret Satan'"></span></h2>
+    <h2><em>Invite Members to</em> <span data-bind="text: description.length > 0 ? description : 'My Secret Santa'"></span></h2>
     <form data-bind="foreach: members">
       <p>
         <span><input class="half" type="text" placeholder="Name" data-bind="value: name"/><input class="half" type="text" placeholder="Email" data-bind="value: email"/></span>
@@ -65,8 +66,8 @@
 
 <section>
   <div class="content">
-    <h1>Secret <em>Satan</em> Success!</h1>
-    <p>Your invitations have been sent! Check your email for your spooky matchup.</p>
+    <h1>Success!</h1>
+    <p>Emails have been sent to all participants requesting their postal addresses and any special preferences. Match-ups will be created and sent out on:</p>
   </div>
 </section>
 
@@ -74,9 +75,9 @@
   <nav>
     <ul>
       <li><img src="img/logo.png"/>Made by <a href="http://thephuse.com"><strong>The Phuse</strong></a></li>
-      <li class="right"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Make Hallowe'en even better by hosting your own Secret Satan!">Tweet</a>
+      <li class="right"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Make Hallowe'en even better by hosting your own Secret Santa!">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
-      <li class="right"><div class="fb-like" data-href="http://thephuse.com/secretsatan" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></li>
+      <li class="right"><div class="fb-like" data-href="http://thephuse.com/secret" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></li>
   </nav>
 </footer>
 

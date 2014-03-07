@@ -29,64 +29,75 @@
 
 $contentwidth: 840px;
 
-$bodycolor: #fff;
-$red: #e23839;
-$mediumred: #ca292a;
-$darkred: #9e2728;
-$shadow: #8f9bae;
-$darkgrey: #656d79;
+$bodycolor: #7f8484;
+$lightpink: #e77782;
+$pink: #df4958;
+$hoverpink: #efa4ab;
+$mediumpink: #a73843;
+$darkpink: #d29ba0;
+$shadow: #9e2728;
+$darkgrey: #8a8e8e;
 $grey: #94979b;
+$gold: #f9f6ef;
+$darkgold: #e2d9c5;
+$darkergold: #e2ca95;
+
+html {
+  background: #B0D4D5;
+  @include linear(#E3EBEB, #B0D4D5);
+}
 
 body {
   color: $bodycolor;
-  font-family: "omnes-pro", sans-serif;
+  font-family: 'Arvo', serif;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.4em;
   -webkit-text-size-adjust: 100%;
   text-align: center;
   font-weight: normal;
-  background: #4b3138;
-  @include linear(#292f38, #4b3138);
-  text-shadow: 1px 0 1px rgba(#000, 0.3);
+  background-image:url(../img/bg_image.png);
+  background-position: bottom left;
+  background-repeat: repeat-x;
 }
 input, textarea {
   font-family: "omnes-pro", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   color: $grey;
 }
 
 h1, h2 {
+  color: $pink;
   font-weight: 300;
+  margin-bottom: 25px;
+  padding-bottom: 50px;
+  background: url(../img/header_border.png) 50% bottom no-repeat;
   em {
-    color: $red;
     font-style: normal;
   }
 }
 h1 {
-  color: #df4958;
   font-size: 2.6em;
   line-height: 1.1em;
 }
 h2 {
-  color: #fff;
   font-size: 1.6em;
   line-height: 1.1em;
 }
 p {
   margin: 1em 0;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.7em;
 }
 
 a, a:active, a:visited {
-  color: $red;
+  color: $pink;
   transition: color 0.2s;
   text-decoration: none;
 }
 a:hover {
-  color: $mediumred;
+  color: $mediumpink;
   transition: color 0.2s;
 }
 
@@ -99,7 +110,16 @@ strong {
 
 /* @group Footer
 ----------------------------------------------- */
+header {
+  height: 70px;
+}
+
+/* @group Footer
+----------------------------------------------- */
 footer {
+  font-family: "omnes-pro", sans-serif;
+  text-shadow: none;
+  padding-top: 30px;
   nav {
     padding: 20px;
     width: 90%;
@@ -107,7 +127,7 @@ footer {
     color: $darkgrey;
     text-align: left;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
   }
   ul {
     list-style: none;
@@ -130,11 +150,22 @@ footer {
 ----------------------------------------------- */
 section {
   width: 90%;
-  height: 100%;
-  max-width: 650px;
+  height: auto;
+  max-width: 980px;
   margin: 0 auto;
   display: none;
-  &.first { display: block; }
+  background: #fff; 
+  border-radius: 4px;
+  &.first { 
+    display: block;
+    .btn, a.btn {
+      margin-top: 30px;
+    }
+  }
+  .content {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
 
@@ -165,14 +196,31 @@ form {
     padding: 9px 15px;
     box-sizing: border-box;
     color: $grey;
-    border: none;
+    border: 1px solid $darkgold;
+    background: $gold;
     @include rounded(4px);
-    box-shadow: 0 3px 0 0 $shadow;
     font-weight: 500;
+    &::-webkit-input-placeholder {
+      color: #cbbea2;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+       color: #cbbea2;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: #cbbea2;  
+    }
+
+    &:-ms-input-placeholder {  
+       color: #cbbea2;  
+    }
     &.half {
       width: 49%;
       &:first-child { margin-right: 1%; }
       &:last-child { margin-left: 1%; }
+    }
+    &:focus {
+      border-color: $darkergold;
     }
   }
   .datepicker {
@@ -197,19 +245,26 @@ form {
 /* @group Buttons
 ----------------------------------------------- */
 
-.btn, a.btn {
-  padding: 5px 35px;
-  background: $red;
+.btn, a.btn, {
+  padding: 10px 5px 7px;
+  background: $pink;
   color: #fff;
+  display: inline-block;
   @include rounded(4px);
   text-shadow: 1px 0 1px 0 rgba(#000, 0.4);
-  box-shadow: 0 3px 0 $darkred;
+  box-shadow: 0 3px 0 $shadow;
+  white-space: nowrap;
   strong {
     font-size: 27px;
     padding-right: 5px;
   }
   &:hover {
-    background: $mediumred;
+    background: $hoverpink;
+    box-shadow: 0 3px 0 $darkpink;
+    span {
+      border-color: #f1b9be; 
+      background-image: url(../img/arrow_hover.png);
+    }
   }
   &.btn-icon {
     font-size: 37px;
@@ -233,6 +288,14 @@ form {
     color: rgba(#fff, 0.4);
     background: rgba(#000, 0.1);
     box-shadow: none;
+  }
+  span {
+    border-radius: 2px;
+    border: 1px solid $lightpink;
+    padding: 5px 80px 5px 50px;
+    background-image: url(../img/arrow.png);
+    background-position: 145px 7px;
+    background-repeat: no-repeat;
   }
 }
 
@@ -260,7 +323,7 @@ $dropdown-fallback-border:       #ccc;
 $dropdown-divider-bg:            #e5e5e5;
 
 $dropdown-link-active-color:     #fff;
-$dropdown-link-active-bg:        $red;
+$dropdown-link-active-bg:        $pink;
 
 $dropdown-link-color:            $darkgrey;
 $dropdown-link-hover-color:      #fff;
