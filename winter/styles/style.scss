@@ -1,0 +1,442 @@
+/* @group Global
+----------------------------------------------- */
+@mixin linear($start, $end) {
+  background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
+  background-image: -webkit-linear-gradient(top, $start 0%, $end 100%);
+  background-image: -o-linear-gradient(top, $start 0%, $end 100%);
+  background-image: -ms-linear-gradient(top, $start 0%, $end 100%);
+  background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+}
+
+@mixin rounded($amount) {
+  border-radius: $amount;
+  -khtml-border-radius: $amount;
+  -webkit-border-radius: $amount;
+  -moz-border-radius: $amount;
+}
+
+@font-face {
+  font-family: 'vtks_screamregular';
+  src: url('../fonts/vtks_scream-webfont.eot');
+  src: url('../fonts/vtks_scream-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vtks_scream-webfont.woff') format('woff'),
+       url('../fonts/vtks_scream-webfont.ttf') format('truetype'),
+       url('../fonts/vtks_scream-webfont.svg#vtks_screamregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$contentwidth: 840px;
+
+$bodycolor: #fff;
+$red: #e23839;
+$mediumred: #ca292a;
+$darkred: #9e2728;
+$shadow: #8f9bae;
+$darkgrey: #656d79;
+$grey: #94979b;
+
+body {
+  color: $bodycolor;
+  font-family: "omnes-pro", sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4em;
+  -webkit-text-size-adjust: 100%;
+  text-align: center;
+  font-weight: normal;
+  background: #4b3138;
+  @include linear(#292f38, #4b3138);
+  text-shadow: 1px 0 1px rgba(#000, 0.3);
+}
+input, textarea {
+  font-family: "omnes-pro", sans-serif;
+  font-size: 16px;
+  color: $grey;
+}
+
+h1, h2 {
+  font-weight: 300;
+  em {
+    color: $red;
+    font-style: normal;
+  }
+}
+h1 {
+  color: #df4958;
+  font-size: 2.6em;
+  line-height: 1.1em;
+}
+h2 {
+  color: #fff;
+  font-size: 1.6em;
+  line-height: 1.1em;
+}
+p {
+  margin: 1em 0;
+  font-size: 20px;
+  line-height: 1.7em;
+}
+
+a, a:active, a:visited {
+  color: $red;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+a:hover {
+  color: $mediumred;
+  transition: color 0.2s;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.left { float: left; }
+.right { float: right; }
+
+/* @group Footer
+----------------------------------------------- */
+footer {
+  nav {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    color: $darkgrey;
+    text-align: left;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    &.right {
+      margin-left: 10px;
+    }
+  }
+  img {
+    margin: 0 5px -6px 0;
+  }
+}
+
+
+/* @group Sections
+----------------------------------------------- */
+section {
+  width: 90%;
+  height: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  display: none;
+  &.first { display: block; }
+}
+
+
+/* @group Occasion
+----------------------------------------------- */
+input[type=radio]{
+  display: none;
+}
+input[type=radio] + span {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+input[type=radio]:checked + span {
+  border: 2px solid #f00;
+}
+
+
+/* @group Forms
+----------------------------------------------- */
+form {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  p { position: relative; }
+  input[type="text"], textarea {
+    width: 100%;
+    font-size: 17px;
+    padding: 9px 15px;
+    box-sizing: border-box;
+    color: $grey;
+    border: none;
+    @include rounded(4px);
+    box-shadow: 0 3px 0 0 $shadow;
+    font-weight: 500;
+    &.half {
+      width: 49%;
+      &:first-child { margin-right: 1%; }
+      &:last-child { margin-left: 1%; }
+    }
+  }
+  .datepicker {
+    background: #fff url("../img/calendar.png") no-repeat 95%;
+  }
+  textarea {
+    height: 150px;
+  }
+  .btn-icon {
+    position: absolute;
+    right: -40px;
+    top: 5px;
+  }
+  .description {
+    color: $darkgrey;
+    font-size: 0.8em;
+    margin-top: 0;
+  }
+}
+
+
+/* @group Buttons
+----------------------------------------------- */
+
+.btn, a.btn {
+  padding: 5px 35px;
+  background: $red;
+  color: #fff;
+  @include rounded(4px);
+  text-shadow: 1px 0 1px 0 rgba(#000, 0.4);
+  box-shadow: 0 3px 0 $darkred;
+  strong {
+    font-size: 27px;
+    padding-right: 5px;
+  }
+  &:hover {
+    background: $mediumred;
+  }
+  &.btn-icon {
+    font-size: 37px;
+    line-height: 21px;
+    padding: 8px 13px 16px;
+    right: -60px;
+    top: 2px;
+    box-shadow: 0 3px 0 #39414d;
+    font-weight: 500;
+  }
+  &.dark, &.btn-icon {
+    color: rgba(#fff, 0.4);
+    background: rgba(#000, 0.3);
+    box-shadow: none;
+    &:hover {
+      background: rgba(#000, 0.35);
+    }
+  }
+  &.disabled {
+    cursor: default;
+    color: rgba(#fff, 0.4);
+    background: rgba(#000, 0.1);
+    box-shadow: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// Dropdown menus
+// --------------------------------------------------
+
+$caret-width-base:               4px;
+$caret-width-large:              5px;
+
+$dropdown-bg:                    #fff;
+$dropdown-border:                rgba(0,0,0,.15);
+$dropdown-fallback-border:       #ccc;
+$dropdown-divider-bg:            #e5e5e5;
+
+$dropdown-link-active-color:     #fff;
+$dropdown-link-active-bg:        $red;
+
+$dropdown-link-color:            $darkgrey;
+$dropdown-link-hover-color:      #fff;
+$dropdown-link-hover-bg:         $dropdown-link-active-bg;
+
+$dropdown-link-disabled-color:   $grey;
+
+$dropdown-header-color:          $grey;
+
+$dropdown-caret-color:           #000;
+
+// Dropdown arrow/caret
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   $caret-width-base solid $dropdown-caret-color;
+  border-right: $caret-width-base solid transparent;
+  border-left:  $caret-width-base solid transparent;
+  border-bottom: 0 dotted;
+  content: "";
+}
+
+// The dropdown wrapper (div)
+.dropdown {
+  position: relative;
+}
+
+// Prevent the focus on the dropdown toggle when closing dropdowns
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+// The dropdown menu (ul)
+.dropdown-menu {
+  color: $darkgrey;
+  text-shadow: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  background-color: $dropdown-bg;
+  border: 1px solid $dropdown-fallback-border; // IE8 fallback
+  border: 1px solid $dropdown-border;
+  border-radius: 3px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+
+  // Aligns the dropdown menu to right
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Links within the dropdown menu
+  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    color: $dropdown-link-color;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+  }
+
+  th {
+    font-weight: 500;
+  }
+}
+
+// Hover/Focus state
+.dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $dropdown-link-hover-color;
+    background-color: $dropdown-link-hover-bg;
+  }
+}
+
+// Active state
+.dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $dropdown-link-active-color;
+    text-decoration: none;
+    outline: 0;
+    background-color: $dropdown-link-active-bg;
+  }
+}
+
+// Disabled state
+//
+// Gray out text and ensure the hover/focus state remains gray
+
+.dropdown-menu > .disabled > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $dropdown-link-disabled-color;
+  }
+}
+// Nuke hover/focus effects
+.dropdown-menu > .disabled > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none; // Remove CSS gradient
+    cursor: not-allowed;
+  }
+}
+
+// Open state for the dropdown
+.open {
+  // Show the menu
+  > .dropdown-menu {
+    display: block;
+  }
+
+  // Remove the outline when :focus is triggered
+  > a {
+    outline: 0;
+  }
+}
+
+// Dropdown section headers
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  color: $dropdown-header-color;
+}
+
+// Backdrop to catch body clicks on mobile, etc.
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 900;
+}
+
+// Right aligned dropdowns
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+//
+// Just add .dropup after the standard .dropdown class and you're set, bro.
+// TODO: abstract this so that the navbar fixed styles are not placed here?
+
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // Reverse the caret
+  .caret {
+    // Firefox fix for https://github.com/twbs/bootstrap/issues/9538. Once this
+    // gets fixed, restore `border-top: 0;`.
+    border-top: 0 dotted;
+    border-bottom: 4px solid $dropdown-caret-color;
+    content: "";
+  }
+  // Different positioning for bottom up menu
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 1px;
+  }
+}
