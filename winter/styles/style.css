@@ -30,25 +30,27 @@ body {
   background-repeat: repeat-x; }
 
 input, textarea {
-  font-family: "omnes-pro", sans-serif;
+  font-family: 'Arvo', serif;
   font-size: 15px;
   color: #94979b; }
 
 h1, h2 {
   color: #df4958;
   font-weight: 300;
-  margin-bottom: 25px;
-  padding-bottom: 50px;
-  background: url(../img/header_border.png) 50% bottom no-repeat; }
+  margin-bottom: 28px;
+  padding-bottom: 42px;
+  background: url(../img/header_border.png) 50% bottom no-repeat;
+  font-family: 'Elsie', cursive;
+  font-weight: 900; }
   h1 em, h2 em {
     font-style: normal; }
 
 h1 {
-  font-size: 2.6em;
+  font-size: 4.5em;
   line-height: 1.1em; }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 2.4em;
   line-height: 1.1em; }
 
 p {
@@ -73,6 +75,12 @@ strong {
 
 .right {
   float: right; }
+
+.event-date {
+  color: #df4958;
+  border-bottom: 1px dashed #e2d9c5;
+  padding-bottom: 6px;
+  margin: 32px 0 41px; }
 
 /* @group Footer
 ----------------------------------------------- */
@@ -108,7 +116,6 @@ footer {
 ----------------------------------------------- */
 section {
   width: 90%;
-  height: auto;
   max-width: 980px;
   margin: 0 auto;
   display: none;
@@ -136,42 +143,51 @@ input[type=radio]:checked + span {
 
 /* @group Forms
 ----------------------------------------------- */
+.clearfix:after {
+  content: " ";
+  /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
 form {
   width: 90%;
   max-width: 600px;
   margin: 0 auto; }
   form p {
     position: relative; }
-  form input[type="text"], form textarea {
+  form input[type="text"], form input[type="email"], form textarea {
     width: 100%;
     font-size: 17px;
     padding: 9px 15px;
     box-sizing: border-box;
     color: #94979b;
     border: 1px solid #e2d9c5;
-    background: #f9f6ef;
+    background-color: #f9f6ef;
     border-radius: 4px;
     -khtml-border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     font-weight: 500; }
-    form input[type="text"]::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
+    form input[type="text"]::-webkit-input-placeholder, form input[type="email"]::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
       color: #cbbea2; }
-    form input[type="text"]:-moz-placeholder, form textarea:-moz-placeholder {
+    form input[type="text"]:-moz-placeholder, form input[type="email"]:-moz-placeholder, form textarea:-moz-placeholder {
       /* Firefox 18- */
       color: #cbbea2; }
-    form input[type="text"]::-moz-placeholder, form textarea::-moz-placeholder {
+    form input[type="text"]::-moz-placeholder, form input[type="email"]::-moz-placeholder, form textarea::-moz-placeholder {
       /* Firefox 19+ */
       color: #cbbea2; }
-    form input[type="text"]:-ms-input-placeholder, form textarea:-ms-input-placeholder {
+    form input[type="text"]:-ms-input-placeholder, form input[type="email"]:-ms-input-placeholder, form textarea:-ms-input-placeholder {
       color: #cbbea2; }
-    form input[type="text"].half, form textarea.half {
-      width: 49%; }
-      form input[type="text"].half:first-child, form textarea.half:first-child {
+    form input[type="text"].half, form input[type="email"].half, form textarea.half {
+      width: 49%;
+      float: left; }
+      form input[type="text"].half:first-child, form input[type="email"].half:first-child, form textarea.half:first-child {
         margin-right: 1%; }
-      form input[type="text"].half:last-child, form textarea.half:last-child {
+      form input[type="text"].half:last-child, form input[type="email"].half:last-child, form textarea.half:last-child {
         margin-left: 1%; }
-    form input[type="text"]:focus, form textarea:focus {
+    form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
       border-color: #e2ca95; }
   form .datepicker {
     background: white url("../img/calendar.png") no-repeat 95%; }
@@ -189,7 +205,7 @@ form {
 /* @group Buttons
 ----------------------------------------------- */
 .btn, a.btn {
-  padding: 10px 5px 7px;
+  padding: 22px 5px 21px;
   background: #df4958;
   color: #fff;
   display: inline-block;
@@ -198,8 +214,10 @@ form {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   text-shadow: 1px 0 1px 0 rgba(0, 0, 0, 0.4);
-  box-shadow: 0 3px 0 #9e2728;
-  white-space: nowrap; }
+  box-shadow: 0 2px 0 #a73843;
+  white-space: nowrap;
+  font-size: 1.4em;
+  letter-spacing: 0.3px; }
   .btn strong, a.btn strong {
     font-size: 27px;
     padding-right: 5px; }
@@ -219,10 +237,10 @@ form {
     font-weight: 500; }
   .btn.dark, .btn.btn-icon, a.btn.dark, a.btn.btn-icon {
     color: rgba(255, 255, 255, 0.4);
-    background: rgba(0, 0, 0, 0.3);
+    background: #df4958;
     box-shadow: none; }
     .btn.dark:hover, .btn.btn-icon:hover, a.btn.dark:hover, a.btn.btn-icon:hover {
-      background: rgba(0, 0, 0, 0.35); }
+      background: #d29ba0; }
   .btn.disabled, a.btn.disabled {
     cursor: default;
     color: rgba(255, 255, 255, 0.4);
@@ -231,9 +249,9 @@ form {
   .btn span, a.btn span {
     border-radius: 2px;
     border: 1px solid #e77782;
-    padding: 5px 80px 5px 50px;
+    padding: 15px 91px 15px 62px;
     background-image: url(../img/arrow.png);
-    background-position: 145px 7px;
+    background-position: 202px 21px;
     background-repeat: no-repeat; }
 
 .caret {
@@ -338,3 +356,22 @@ form {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px; }
+
+@media (max-width: 767px) {
+  .btn, a.btn {
+    padding: 14px 5px 12px;
+    white-space: nowrap;
+    font-size: 1.2em; }
+    .btn span, a.btn span {
+      padding: 7px 51px 7px 22px;
+      background-image: url(../img/arrow.png);
+      background-position: 134px 12px;
+      background-repeat: no-repeat; }
+
+  form input[type="text"].half, form input[type="email"].half {
+    width: 100%;
+    margin-right: 0; }
+
+  form input[type="text"].half:last-child, form input[type="email"].half:last-child {
+    margin-left: 0;
+    margin-top: 15px; } }

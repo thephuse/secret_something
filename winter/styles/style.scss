@@ -35,7 +35,7 @@ $pink: #df4958;
 $hoverpink: #efa4ab;
 $mediumpink: #a73843;
 $darkpink: #d29ba0;
-$shadow: #9e2728;
+$shadow: #a73843;
 $darkgrey: #8a8e8e;
 $grey: #94979b;
 $gold: #f9f6ef;
@@ -62,7 +62,7 @@ body {
   background-repeat: repeat-x;
 }
 input, textarea {
-  font-family: "omnes-pro", sans-serif;
+  font-family: 'Arvo', serif;
   font-size: 15px;
   color: $grey;
 }
@@ -70,19 +70,21 @@ input, textarea {
 h1, h2 {
   color: $pink;
   font-weight: 300;
-  margin-bottom: 25px;
-  padding-bottom: 50px;
+  margin-bottom: 28px;
+  padding-bottom: 42px;
   background: url(../img/header_border.png) 50% bottom no-repeat;
+  font-family: 'Elsie', cursive;
+  font-weight: 900;
   em {
     font-style: normal;
   }
 }
 h1 {
-  font-size: 2.6em;
+  font-size: 4.5em;
   line-height: 1.1em;
 }
 h2 {
-  font-size: 1.6em;
+  font-size: 2.4em;
   line-height: 1.1em;
 }
 p {
@@ -107,6 +109,13 @@ strong {
 
 .left { float: left; }
 .right { float: right; }
+
+.event-date {
+  color: $pink;
+  border-bottom: 1px dashed $darkgold;
+  padding-bottom: 6px;
+  margin: 32px 0 41px;
+}
 
 /* @group Footer
 ----------------------------------------------- */
@@ -150,7 +159,6 @@ footer {
 ----------------------------------------------- */
 section {
   width: 90%;
-  height: auto;
   max-width: 980px;
   margin: 0 auto;
   display: none;
@@ -185,19 +193,27 @@ input[type=radio]:checked + span {
 
 /* @group Forms
 ----------------------------------------------- */
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 form {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
   p { position: relative; }
-  input[type="text"], textarea {
+  input[type="text"], input[type="email"], textarea {
     width: 100%;
     font-size: 17px;
     padding: 9px 15px;
     box-sizing: border-box;
     color: $grey;
     border: 1px solid $darkgold;
-    background: $gold;
+    background-color: $gold;
     @include rounded(4px);
     font-weight: 500;
     &::-webkit-input-placeholder {
@@ -216,6 +232,7 @@ form {
     }
     &.half {
       width: 49%;
+      float: left;
       &:first-child { margin-right: 1%; }
       &:last-child { margin-left: 1%; }
     }
@@ -246,14 +263,16 @@ form {
 ----------------------------------------------- */
 
 .btn, a.btn, {
-  padding: 10px 5px 7px;
+  padding: 22px 5px 21px;
   background: $pink;
   color: #fff;
   display: inline-block;
   @include rounded(4px);
   text-shadow: 1px 0 1px 0 rgba(#000, 0.4);
-  box-shadow: 0 3px 0 $shadow;
+  box-shadow: 0 2px 0 $shadow;
   white-space: nowrap;
+  font-size: 1.4em;
+  letter-spacing: 0.3px;
   strong {
     font-size: 27px;
     padding-right: 5px;
@@ -277,10 +296,10 @@ form {
   }
   &.dark, &.btn-icon {
     color: rgba(#fff, 0.4);
-    background: rgba(#000, 0.3);
+    background: $pink;
     box-shadow: none;
     &:hover {
-      background: rgba(#000, 0.35);
+      background: $darkpink;
     }
   }
   &.disabled {
@@ -292,9 +311,9 @@ form {
   span {
     border-radius: 2px;
     border: 1px solid $lightpink;
-    padding: 5px 80px 5px 50px;
+    padding: 15px 91px 15px 62px;
     background-image: url(../img/arrow.png);
-    background-position: 145px 7px;
+    background-position: 202px 21px;
     background-repeat: no-repeat;
   }
 }
@@ -501,5 +520,30 @@ $dropdown-caret-color:           #000;
     top: auto;
     bottom: 100%;
     margin-bottom: 1px;
+  }
+}
+
+//
+// Phones
+// --------------------------------------------------
+@media (max-width: 767px){
+  .btn, a.btn, {
+    padding: 14px 5px 12px;
+    white-space: nowrap;
+    font-size: 1.2em;
+    span {
+      padding: 7px 51px 7px 22px;
+      background-image: url(../img/arrow.png);
+      background-position: 134px 12px;
+      background-repeat: no-repeat;
+    }
+  }
+  form input[type="text"].half, form input[type="email"].half {
+    width: 100%;
+    margin-right: 0;
+  }
+  form input[type="text"].half:last-child, form input[type="email"].half:last-child{
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
