@@ -119,12 +119,54 @@ section {
   max-width: 980px;
   margin: 0 auto;
   display: none;
-  background: #fff;
-  border-radius: 4px; }
+  background: url(../img/paper_bg.png) top left repeat white;
+  border-radius: 4px;
+  padding: 25px 0; }
   section.first {
     display: block; }
     section.first .btn, section.first a.btn {
       margin-top: 30px; }
+  section .content-wrapper {
+    margin: 0 25px;
+    border: 1px solid #e2d9c5;
+    height: 100%;
+    position: relative; }
+    section .content-wrapper .ornament {
+      height: 26px;
+      width: 26px;
+      position: absolute; }
+      section .content-wrapper .ornament.left-top {
+        background: url(../img/left_top_flair.png) top left no-repeat;
+        top: -1px;
+        left: -1px; }
+      section .content-wrapper .ornament.right-top {
+        background: url(../img/right_top_flair.png) top left no-repeat;
+        top: -1px;
+        right: -1px; }
+      section .content-wrapper .ornament.left-bottom {
+        background: url(../img/left_bottom_flair.png) top left no-repeat;
+        bottom: -1px;
+        left: -1px; }
+      section .content-wrapper .ornament.right-bottom {
+        background: url(../img/right_bottom_flair.png) top left no-repeat;
+        bottom: -1px;
+        right: -1px; }
+    section .content-wrapper .middle-top {
+      width: 84px;
+      height: 33px;
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      margin-left: -42px;
+      background: url(../img/top_flair.png) top left no-repeat; }
+    section .content-wrapper .middle-bottom {
+      width: 84px;
+      height: 33px;
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      margin-left: -42px;
+      background: url(../img/bottom_flair.png) top left no-repeat; }
   section .content {
     width: 60%;
     margin: 0 auto; }

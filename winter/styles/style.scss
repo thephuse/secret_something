@@ -162,14 +162,72 @@ section {
   max-width: 980px;
   margin: 0 auto;
   display: none;
-  background: #fff; 
+  background: url(../img/paper_bg.png) top left repeat #fff; 
   border-radius: 4px;
+  padding: 25px 0;
   &.first { 
     display: block;
     .btn, a.btn {
       margin-top: 30px;
     }
   }
+  .content-wrapper {
+    margin: 0 25px;
+    border: 1px solid $darkgold;
+    height: 100%;
+    position: relative;
+    .ornament {
+      height: 26px;
+      width: 26px;
+      position: absolute;
+      &.left-top {
+        background: url(../img/left_top_flair.png) top left no-repeat;
+        top: -1px;
+        left: -1px;
+      }
+      &.right-top {
+        background: url(../img/right_top_flair.png) top left no-repeat;
+        top: -1px;
+        right: -1px;
+      }
+      &.left-bottom {
+        background: url(../img/left_bottom_flair.png) top left no-repeat;
+        bottom: -1px;
+        left: -1px;
+      }
+      &.right-bottom {
+        background: url(../img/right_bottom_flair.png) top left no-repeat;
+        bottom: -1px;
+        right: -1px;
+      }
+    }
+    .middle-top {
+      width: 84px;
+      height: 33px;
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      margin-left: -42px;
+      background: url(../img/top_flair.png) top left no-repeat;
+    }
+    .middle-bottom {
+      width: 84px;
+      height: 33px;
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      margin-left: -42px;
+      background: url(../img/bottom_flair.png) top left no-repeat;
+    }
+  }
+  // &:before {
+  //   content: " ";
+  //   background: url(../img/content_top_border.png) top left no-repeat;
+  //   width: 100%;
+  //   display: block;
+  //   height: 36px;
+  //   margin: 0 auto;
+  // }
   .content {
     width: 60%;
     margin: 0 auto;
