@@ -41,7 +41,8 @@ h1, h2 {
   padding-bottom: 42px;
   background: url(../img/header_border.png) 50% bottom no-repeat;
   font-family: 'Elsie', cursive;
-  font-weight: 900; }
+  font-weight: 900;
+  padding-top: 30px; }
   h1 em, h2 em {
     font-style: normal; }
 
@@ -130,6 +131,7 @@ section {
     margin: 0 25px;
     border: 1px solid #e2d9c5;
     height: 100%;
+    min-height: 600px;
     position: relative; }
     section .content-wrapper .ornament {
       height: 26px;
@@ -169,7 +171,7 @@ section {
       background: url(../img/bottom_flair.png) top left no-repeat; }
   section .content {
     width: 60%;
-    margin: 0 auto; }
+    margin: 0 auto 50px; }
 
 /* @group Occasion
 ----------------------------------------------- */

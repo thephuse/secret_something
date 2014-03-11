@@ -1,3 +1,9 @@
+var resize = function() {
+  var windowHeight = $(window).height();
+  var headerHeight = $('header').height();
+};
+
+
 // Class to represent a member of the secret something
 function Member(name, email) {
   var self = this;
@@ -17,9 +23,11 @@ function ViewModel() {
   
   // Operations
   self.addMember = function () {
+    resize();
     self.members.push(new Member("", ""));
   };
   self.removeMember = function (member) {
+    resize();
     self.members.remove(member);
   };
 
@@ -30,6 +38,10 @@ ko.applyBindings(new ViewModel());
 
 //
 $(function () {
+  resize();
+  $(window).resize(function () {
+    resize();
+  });
 
   $('.next').click(function (e) {
     e.preventDefault();

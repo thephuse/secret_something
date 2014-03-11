@@ -75,6 +75,7 @@ h1, h2 {
   background: url(../img/header_border.png) 50% bottom no-repeat;
   font-family: 'Elsie', cursive;
   font-weight: 900;
+  padding-top: 30px;
   em {
     font-style: normal;
   }
@@ -175,6 +176,7 @@ section {
     margin: 0 25px;
     border: 1px solid $darkgold;
     height: 100%;
+    min-height: 600px;
     position: relative;
     .ornament {
       height: 26px;
@@ -220,17 +222,9 @@ section {
       background: url(../img/bottom_flair.png) top left no-repeat;
     }
   }
-  // &:before {
-  //   content: " ";
-  //   background: url(../img/content_top_border.png) top left no-repeat;
-  //   width: 100%;
-  //   display: block;
-  //   height: 36px;
-  //   margin: 0 auto;
-  // }
   .content {
     width: 60%;
-    margin: 0 auto;
+    margin: 0 auto 50px;
   }
 }
 
