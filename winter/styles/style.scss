@@ -289,6 +289,7 @@ form {
     }
     &:focus {
       border-color: $darkergold;
+      outline: none;
     }
   }
   .datepicker {
@@ -314,7 +315,7 @@ form {
 ----------------------------------------------- */
 
 .btn, a.btn, {
-  padding: 22px 5px 21px;
+  padding: 20px 5px 17px;
   background: $pink;
   color: #fff;
   display: inline-block;
@@ -365,10 +366,14 @@ form {
   span {
     border-radius: 2px;
     border: 1px solid $lightpink;
-    padding: 15px 91px 15px 62px;
+    padding: 15px 91px 12px 62px;
     background-image: url(../img/arrow.png);
-    background-position: 202px 21px;
+    background-position: right 58px top 20px;
     background-repeat: no-repeat;
+  }
+  &.add {
+    margin-top: 1em;
+    clear: left;
   }
 }
 

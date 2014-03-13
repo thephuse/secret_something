@@ -45,15 +45,12 @@
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
     <div class="content">
       <h2>Get Started</h2>
-      <form>
-        <p><input type="text" placeholder="Title"/></p>
-        <p class="clearfix"><input class="half" type="text" placeholder="Your Name"/><input class="half" type="email" placeholder="Your Email"/></p>
-        <p class="clearfix"><input class="half datepicker" type="text" data-bind="value: matchup" placeholder="Match-up Date"/><input class="half datepicker" type="text" placeholder="Event Date"/></p>
-        <p><textarea placeholder="Description" data-bind="value: description"/></textarea></p>
-<!--         <p><a class="btn next" href="#">Continue</a></p>
- -->        <p><a class="btn next" href="#" 
-        data-bind="css: members().length < 2 ? 'disabled' : '',
-                   text: 'Continue'"></a></p>
+      <form class="form">
+        <p><input type="text" class="eventTitle" placeholder="Title"/></p>
+        <p class="clearfix"><input class="half hostName" type="text" placeholder="Your Name"/><input class="half" type="text" class="hostEmail" placeholder="Your Email"/></p>
+        <p class="clearfix"><input class="half datepicker matchupDate" type="text" placeholder="Match-up Date"/><input class="half datepicker eventDate" type="text" placeholder="Event Date"/></p>
+        <p><textarea placeholder="Description" class="eventDescription" data-bind="value: description"/></textarea></p>
+        <p><a class="btn next disabled" href="#">Continue</a></p>
       </form>
     </div>
   </div>
@@ -71,7 +68,7 @@
           <a href="#" class="btn btn-icon" data-bind="click: $root.removeMember, visible: $root.members().length > 1">&times;</a>
         </p>
       </form>
-      <p><a class="btn dark" href="#" data-bind="click: addMember"><strong>+</strong> Add Another</a></p>
+      <p><a class="btn add" href="#" data-bind="click: addMember"><span><strong>+</strong> Add Another</a></span></p>
       <p>You currently have <span data-bind="text: members().length - 1"></span> friend<span data-bind="visible: members().length != 2">s</span>.</p>
       <p><a class="btn next" href="#" 
         data-bind="css: members().length < 2 ? 'disabled' : '',
@@ -88,6 +85,21 @@
     <div class="content">
       <h1>Success!</h1>
       <p>Emails have been sent to all participants requesting their postal addresses and any special preferences. Match-ups will be created and sent out on:</p>
+
+      <p class="event-date">December 25, 2014</p>
+
+      <p>Thanks for using Secret Santa!</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content-wrapper">
+    <i class="left-top ornament"></i><i class="middle-top"></i><i class="right-top ornament"></i>
+    <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
+    <div class="content">
+      <h1>Thank You!</h1>
+      <p>Your details have been submitted. Match-ups will be created and sent out on:</p>
 
       <p class="event-date">December 25, 2014</p>
 

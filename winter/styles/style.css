@@ -231,7 +231,8 @@ form {
       form input[type="text"].half:last-child, form input[type="email"].half:last-child, form textarea.half:last-child {
         margin-left: 1%; }
     form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
-      border-color: #e2ca95; }
+      border-color: #e2ca95;
+      outline: none; }
   form .datepicker {
     background: white url("../img/calendar.png") no-repeat 95%; }
   form textarea {
@@ -248,7 +249,7 @@ form {
 /* @group Buttons
 ----------------------------------------------- */
 .btn, a.btn {
-  padding: 22px 5px 21px;
+  padding: 20px 5px 17px;
   background: #df4958;
   color: #fff;
   display: inline-block;
@@ -294,10 +295,13 @@ form {
   .btn span, a.btn span {
     border-radius: 2px;
     border: 1px solid #e77782;
-    padding: 15px 91px 15px 62px;
+    padding: 15px 91px 12px 62px;
     background-image: url(../img/arrow.png);
-    background-position: 202px 21px;
+    background-position: right 58px top 20px;
     background-repeat: no-repeat; }
+  .btn.add, a.btn.add {
+    margin-top: 1em;
+    clear: left; }
 
 .caret {
   display: inline-block;
