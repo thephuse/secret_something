@@ -75,14 +75,13 @@ h1, h2 {
   background: url(../img/header_border.png) 50% bottom no-repeat;
   font-family: 'Elsie', cursive;
   font-weight: 900;
-  padding-top: 30px;
   em {
     font-style: normal;
   }
 }
 h1 {
   font-size: 4.5em;
-  line-height: 1.1em;
+  line-height: 1em;
 }
 h2 {
   font-size: 2.4em;
@@ -356,9 +355,12 @@ form {
   }
   &.disabled {
     cursor: default;
-    color: rgba(#fff, 0.4);
-    background: rgba(#000, 0.1);
-    box-shadow: none;
+    background: $hoverpink;
+    box-shadow: 0 3px 0 $darkpink;
+    span {
+      border-color: #f1b9be; 
+      background-image: url(../img/arrow_hover.png);
+    }
   }
   span {
     border-radius: 2px;

@@ -41,14 +41,13 @@ h1, h2 {
   padding-bottom: 42px;
   background: url(../img/header_border.png) 50% bottom no-repeat;
   font-family: 'Elsie', cursive;
-  font-weight: 900;
-  padding-top: 30px; }
+  font-weight: 900; }
   h1 em, h2 em {
     font-style: normal; }
 
 h1 {
   font-size: 4.5em;
-  line-height: 1.1em; }
+  line-height: 1em; }
 
 h2 {
   font-size: 2.4em;
@@ -287,9 +286,11 @@ form {
       background: #d29ba0; }
   .btn.disabled, a.btn.disabled {
     cursor: default;
-    color: rgba(255, 255, 255, 0.4);
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: none; }
+    background: #efa4ab;
+    box-shadow: 0 3px 0 #d29ba0; }
+    .btn.disabled span, a.btn.disabled span {
+      border-color: #f1b9be;
+      background-image: url(../img/arrow_hover.png); }
   .btn span, a.btn span {
     border-radius: 2px;
     border: 1px solid #e77782;
