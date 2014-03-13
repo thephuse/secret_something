@@ -47,9 +47,9 @@
       <h2>Get Started</h2>
       <form class="form">
         <p><input type="text" class="eventTitle" placeholder="Title"/></p>
-        <p class="clearfix"><input class="half hostName" type="text" placeholder="Your Name"/><input class="half" type="text" class="hostEmail" placeholder="Your Email"/></p>
-        <p class="clearfix"><input class="half datepicker matchupDate" type="text" placeholder="Match-up Date"/><input class="half datepicker eventDate" type="text" placeholder="Event Date"/></p>
-        <p><textarea placeholder="Description" class="eventDescription" data-bind="value: description"/></textarea></p>
+        <p class="clearfix"><input class="half hostName" type="text" placeholder="Your Name"/><input class="half hostEmail" type="text" placeholder="Your Email"/></p>
+        <p class="clearfix"><input id="datepicker" class="half matchupDate" type="text" placeholder="Match-up Date"/><input id="datepicker2" class="half eventDate" type="text" placeholder="Event Date"/></p>
+        <p><textarea placeholder="Description" class="eventDescription" data-bind="value: description"></textarea></p>
         <p><a class="btn next disabled" href="#">Continue</a></p>
       </form>
     </div>
@@ -68,7 +68,7 @@
           <a href="#" class="btn btn-icon" data-bind="click: $root.removeMember, visible: $root.members().length > 1">&times;</a>
         </p>
       </form>
-      <p><a class="btn add" href="#" data-bind="click: addMember"><span><strong>+</strong> Add Another</a></span></p>
+      <p><a class="btn add" href="#" data-bind="click: addMember"><span><strong>+</strong> Add Another</span></a></p>
       <p>You currently have <span data-bind="text: members().length - 1"></span> friend<span data-bind="visible: members().length != 2">s</span>.</p>
       <p><a class="btn next" href="#" 
         data-bind="css: members().length < 2 ? 'disabled' : '',
@@ -111,10 +111,11 @@
 <footer>
   <nav>
     <ul>
-      <li><img src="img/logo.png"/>Made by <a href="http://thephuse.com"><strong>The Phuse</strong></a></li>
+      <li><img alt="Secret Santa" src="img/logo.png"/>Made by <a href="http://thephuse.com"><strong>The Phuse</strong></a></li>
       <li class="right"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Make Hallowe'en even better by hosting your own Secret Santa!">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
       <li class="right"><div class="fb-like" data-href="http://thephuse.com/secret" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></li>
+    </ul>
   </nav>
 </footer>
 
