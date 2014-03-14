@@ -9,9 +9,6 @@
   <link rel="stylesheet" type="text/css" href="styles/datepicker.css" />
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Elsie:400,900' rel='stylesheet' type='text/css'>
-
-  <script type="text/javascript" src="//use.typekit.net/nmy4cph.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -48,7 +45,14 @@
       <form class="form">
         <p><input type="text" class="eventTitle" placeholder="Title"/></p>
         <p class="clearfix"><input class="half hostName" type="text" placeholder="Your Name"/><input class="half hostEmail" type="text" placeholder="Your Email"/></p>
-        <p class="clearfix"><input id="datepicker" class="half matchupDate" type="text" placeholder="Match-up Date"/><input id="datepicker2" class="half eventDate" type="text" placeholder="Event Date"/></p>
+        <p class="clearfix">
+          <span class="input-append date half" id="datepicker" data-date="" data-date-format="yyyy-mm-dd">
+              <input type="text" id="date-daily" class="matchupDate" placeholder="Match-up Date" /> 
+          </span>
+          <span class="input-append date half" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
+              <input type="text" id="date-daily2" class="eventDate" placeholder="Event Date" /> 
+          </span>
+        </p>
         <p><textarea placeholder="Description" class="eventDescription" data-bind="value: description"></textarea></p>
         <p><a class="btn next disabled" href="#">Continue</a></p>
       </form>

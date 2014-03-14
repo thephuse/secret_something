@@ -223,13 +223,6 @@ form {
       color: #cbbea2; }
     form input[type="text"]:-ms-input-placeholder, form input[type="email"]:-ms-input-placeholder, form textarea:-ms-input-placeholder {
       color: #cbbea2; }
-    form input[type="text"].half, form input[type="email"].half, form textarea.half {
-      width: 49%;
-      float: left; }
-      form input[type="text"].half:first-child, form input[type="email"].half:first-child, form textarea.half:first-child {
-        margin-right: 1%; }
-      form input[type="text"].half:last-child, form input[type="email"].half:last-child, form textarea.half:last-child {
-        margin-left: 1%; }
     form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
       border-color: #e2ca95;
       outline: none; }
@@ -245,6 +238,14 @@ form {
     color: #8a8e8e;
     font-size: 0.8em;
     margin-top: 0; }
+
+form input.half, .half {
+  width: 49%;
+  float: left; }
+  form input.half:first-child, .half:first-child {
+    margin-right: 1%; }
+  form input.half:last-child, .half:last-child {
+    margin-left: 1%; }
 
 /* @group Buttons
 ----------------------------------------------- */

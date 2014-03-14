@@ -281,12 +281,6 @@ form {
     &:-ms-input-placeholder {  
        color: #cbbea2;  
     }
-    &.half {
-      width: 49%;
-      float: left;
-      &:first-child { margin-right: 1%; }
-      &:last-child { margin-left: 1%; }
-    }
     &:focus {
       border-color: $darkergold;
       outline: none;
@@ -308,6 +302,13 @@ form {
     font-size: 0.8em;
     margin-top: 0;
   }
+}
+
+form input.half, .half {
+  width: 49%;
+  float: left;
+  &:first-child { margin-right: 1%; }
+  &:last-child { margin-left: 1%; }
 }
 
 
