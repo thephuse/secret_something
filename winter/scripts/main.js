@@ -18,17 +18,6 @@ function Member(name, email) {
   self.email = ko.observable(email);
 };
 
-//Class to detect intial form is complete
-function formComplete(eventTitle, hostName, hostEmail, matchupDate, eventDate, description){
-  var self = this;
-  self.eventTitle = ko.observable(eventTitle);
-  self.hostName = ko.observable(hostName);
-  self.hostEmail = ko.observable(hostEmail);
-  self.matchupDate = ko.observable(matchupDate);
-  self.eventDate = ko.observable(eventDate);
-  self.description = ko.observable(description);
-};
-
 // Main functions
 function ViewModel() {
   var self = this;
@@ -129,4 +118,40 @@ $(function () {
     validate();
   });
 
+  $('.add').click(function(){
+      $(this).parents('section').find('.next').wrapInner('<span/>')
+  });
+
 });
+
+
+
+var m_names = new Array("January", "February", "March", 
+"April", "May", "June", "July", "August", "September", 
+"October", "November", "December");
+
+var d = new Date();
+var curr_date = d.getDate();
+var sup = "";
+if (curr_date == 1 || curr_date == 21 || curr_date ==31)
+   {
+   sup = "st";
+   }
+else if (curr_date == 2 || curr_date == 22)
+   {
+   sup = "nd";
+   }
+else if (curr_date == 3 || curr_date == 23)
+   {
+   sup = "rd";
+   }
+else
+   {
+   sup = "th";
+   }
+
+var curr_month = d.getMonth();
+var curr_year = d.getFullYear();
+
+document.write(curr_date + "<SUP>" + sup + "</SUP> " 
++ m_names[curr_month] + " " + curr_year);

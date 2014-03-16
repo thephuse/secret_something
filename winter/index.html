@@ -47,7 +47,7 @@
         <p class="clearfix"><input class="half hostName" type="text" placeholder="Your Name"/><input class="half hostEmail" type="text" placeholder="Your Email"/></p>
         <p class="clearfix">
           <span class="input-append date half" id="datepicker" data-date="" data-date-format="yyyy-mm-dd">
-              <input type="text" id="date-daily" class="matchupDate" placeholder="Match-up Date" /> 
+              <input type="text" id="date-daily" class="matchupDate" data-bind="value: matchupDate" placeholder="Match-up Date" /> 
           </span>
           <span class="input-append date half" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
               <input type="text" id="date-daily2" class="eventDate" placeholder="Event Date" /> 
@@ -90,7 +90,7 @@
       <h1>Success!</h1>
       <p>Emails have been sent to all participants requesting their postal addresses and any special preferences. Match-ups will be created and sent out on:</p>
 
-      <p class="event-date">December 25, 2014</p>
+      <p class="event-date" data-bind="text: matchupDate"></p>
 
       <p>Thanks for using Secret Santa!</p>
     </div>
