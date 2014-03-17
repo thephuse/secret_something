@@ -598,12 +598,18 @@ $dropdown-caret-color:           #000;
       background-repeat: no-repeat;
     }
   }
-  form input[type="text"].half, form input[type="email"].half {
-    width: 100%;
+  .half {
+    width: 100% !important;
     margin-right: 0;
+  }
+  .half #date-daily {
+    margin-bottom: 15px;
   }
   form input[type="text"].half:last-child, form input[type="email"].half:last-child{
     margin-left: 0;
     margin-top: 15px;
+  }
+  h1 {
+    font-size: 3em;
   }
 }
