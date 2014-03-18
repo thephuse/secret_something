@@ -28,9 +28,7 @@ function ViewModel() {
   var self = this;
 
   // Editable Data
-  self.members = ko.observableArray([
-      new Member("", "")
-    ]);
+  self.members = ko.observableArray();
   self.description = ko.observable();
 
   self.eventTitle = ko.observable("");
@@ -81,12 +79,15 @@ function ViewModel() {
 
   // Operations
   self.addMember = function () {
+    self.members.push(new Member($('#memberName').val(), $('#memberEmail').val()));
+    $('#memberName').val('');
+    $('#memberEmail').val('');
     resize();
-    self.members.push(new Member("", ""));
   };
   self.removeMember = function (member) {
-    resize();
+    console.log("member: ", member);
     self.members.remove(member);
+    resize();
   };
 
 };

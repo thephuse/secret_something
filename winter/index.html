@@ -54,7 +54,8 @@
           </span>
         </p>
         <p><textarea placeholder="Description" class="eventDescription" data-bind="value: description"></textarea></p>
-        <p><a class="btn next disabled" href="#">Continue</a></p>
+        <!-- <p><a class="btn next disabled" href="#">Continue</a></p>  add me back -->
+        <p><a class="btn next " href="#">Continue</a></p>
       </form>
     </div>
   </div>
@@ -66,15 +67,24 @@
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
     <div class="content">
       <h2>Participants</h2>
-      <form data-bind="foreach: members">
+      <div data-bind="foreach: members">
+        <div class="person">       
+          <span class="name" data-bind="text: name"></span>
+          <span class="email" data-bind="text: email"></span>
+          <a href="#" class="btn btn-icon" data-bind="click: $root.removeMember, visible: $root.members().length > 0">&times;</a>
+        </div>
+      </div>
+      <form>
         <p class="clearfix">
-          <span><input class="half" type="text" placeholder="Name" data-bind="value: name"/><input class="half" type="text" placeholder="Email Address" data-bind="value: email"/></span>
-          <a href="#" class="btn btn-icon" data-bind="click: $root.removeMember, visible: $root.members().length > 1">&times;</a>
+          <span>
+            <input class="half" type="text" placeholder="Name" id="memberName"/>
+            <input class="half" type="text" placeholder="Email Address" id="memberEmail"/>
+            </span>
           <a class="btn btn-icon add" href="#" data-bind="click: $root.addMember">+</a>
         </p>
       </form>
 
-      <p>You currently have <span data-bind="text: members().length - 1"></span> friend<span data-bind="visible: members().length != 2">s</span>.</p>
+      <p>You currently have <span data-bind="text: members().length"></span> friend<span data-bind="visible: members().length != 1">s</span>.</p>
       <p><a class="btn next" href="#" 
         data-bind="css: members().length < 2 ? 'disabled' : '',
                    text: 'Continue'"></a></p>
