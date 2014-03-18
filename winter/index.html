@@ -67,16 +67,17 @@
     <div class="content">
       <h2>Participants</h2>
       <form data-bind="foreach: members">
-        <p>
-          <span><input class="half" type="text" placeholder="Name" data-bind="value: name"/><input class="half" type="text" placeholder="Email" data-bind="value: email"/></span>
+        <p class="clearfix">
+          <span><input class="half" type="text" placeholder="Name" data-bind="value: name"/><input class="half" type="text" placeholder="Email Address" data-bind="value: email"/></span>
           <a href="#" class="btn btn-icon" data-bind="click: $root.removeMember, visible: $root.members().length > 1">&times;</a>
+          <a class="btn btn-icon add" href="#" data-bind="click: $root.addMember">+</a>
         </p>
       </form>
-      <p><a class="btn add" href="#" data-bind="click: addMember"><span><strong>+</strong> Add Another</span></a></p>
+
       <p>You currently have <span data-bind="text: members().length - 1"></span> friend<span data-bind="visible: members().length != 2">s</span>.</p>
       <p><a class="btn next" href="#" 
         data-bind="css: members().length < 2 ? 'disabled' : '',
-                   text: members().length < 2 ? 'Invite Members to Continue' : 'Continue'"></a></p>
+                   text: 'Continue'"></a></p>
     </div>
   </div>
 </section>
@@ -90,7 +91,7 @@
       <h1>Success!</h1>
       <p>Emails have been sent to all participants requesting their postal addresses and any special preferences. Match-ups will be created and sent out on:</p>
 
-      <p class="event-date" data-bind="text: matchupDate"></p>
+      <p class="event-date" data-bind="html: niceMatchupDate"></p>
 
       <p>Thanks for using Secret Santa!</p>
     </div>
@@ -101,7 +102,7 @@
   <nav>
     <ul>
       <li><img alt="Secret Santa" src="img/logo.png"/>Made by <a href="http://thephuse.com"><strong>The Phuse</strong></a></li>
-      <li class="right"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Make Hallowe'en even better by hosting your own Secret Santa!">Tweet</a>
+      <li class="right"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Make your holidays even better by hosting your own Secret Santa!">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
       <li class="right"><div class="fb-like" data-href="http://thephuse.com/secret" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></li>
     </ul>
