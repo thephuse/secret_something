@@ -85,7 +85,7 @@ function ViewModel() {
     resize();
   };
   self.removeMember = function (member) {
-    console.log("member: ", member);
+    //console.log("member: ", member);
     self.members.remove(member);
     resize();
   };
@@ -116,7 +116,7 @@ $(function () {
 
   //form validation function
   function validate() {
-    if ($('.eventTitle').val() !== '' && $('.hostName').val() !== '' && $('.hostEmail').val() !== '' && $('.matchupDate').val() !== '' && $('#date-daily2').val() !== '' && $('.eventDescription').val() !== '' ){
+    if ($('.required').val() !== '' ){
       $('.form .btn.next').removeClass('disabled');
     } else {
       if($('.form .btn.next:not(.disabled)')) {

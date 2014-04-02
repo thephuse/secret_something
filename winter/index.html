@@ -43,17 +43,17 @@
     <div class="content">
       <h2>Get Started</h2>
       <form class="form">
-        <p><input type="text" class="eventTitle" placeholder="Title"/></p>
-        <p class="clearfix"><input class="half hostName" type="text" placeholder="Your Name"/><input class="half hostEmail" type="text" placeholder="Your Email"/></p>
+        <p><input type="text" class="eventTitle required" placeholder="Title"/></p>
+        <p class="clearfix"><input class="half hostName required" type="text" placeholder="Your Name"/><input class="half hostEmail required" type="text" placeholder="Your Email"/></p>
         <p class="clearfix">
           <span class="input-append date half" id="datepicker" data-date="" data-date-format="yyyy-mm-dd">
-              <input type="text" id="date-daily" class="matchupDate" data-bind="value: matchupDate" placeholder="Match-up Date" /> 
+              <input type="text" id="date-daily" class="matchupDate required" data-bind="value: matchupDate" placeholder="Match-up Date" /> 
           </span>
           <span class="input-append date half" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
-              <input type="text" id="date-daily2" class="eventDate" placeholder="Event Date" /> 
+              <input type="text" id="date-daily2" class="eventDate required" placeholder="Event Date" /> 
           </span>
         </p>
-        <p><textarea placeholder="Description" class="eventDescription" data-bind="value: description"></textarea></p>
+        <p><textarea placeholder="Description" class="eventDescription required" data-bind="value: description"></textarea></p>
         <!-- <p><a class="btn next disabled" href="#">Continue</a></p>  add me back -->
         <p><a class="btn next " href="#">Continue</a></p>
       </form>
