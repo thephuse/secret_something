@@ -591,6 +591,11 @@ $dropdown-caret-color:           #000;
 // Phones
 // --------------------------------------------------
 @media (max-width: 767px){
+  section {
+    .content {
+      width: 85%;
+    }
+  }
   .btn, a.btn, {
     padding: 14px 5px 12px;
     white-space: nowrap;

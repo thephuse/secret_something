@@ -6,14 +6,13 @@
   src: url("../fonts/vtks_scream-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/vtks_scream-webfont.woff") format("woff"), url("../fonts/vtks_scream-webfont.ttf") format("truetype"), url("../fonts/vtks_scream-webfont.svg#vtks_screamregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 html {
   background: #B0D4D5;
-  background-image: -moz-linear-gradient(top, #e3ebeb 0%, #b0d4d5 100%);
-  background-image: -webkit-linear-gradient(top, #e3ebeb 0%, #b0d4d5 100%);
-  background-image: -o-linear-gradient(top, #e3ebeb 0%, #b0d4d5 100%);
-  background-image: -ms-linear-gradient(top, #e3ebeb 0%, #b0d4d5 100%);
-  background-image: linear-gradient(to bottom, #e3ebeb 0%, #b0d4d5 100%); }
+  background-image: -moz-linear-gradient(top, #E3EBEB 0%, #B0D4D5 100%);
+  background-image: -webkit-linear-gradient(top, #E3EBEB 0%, #B0D4D5 100%);
+  background-image: -o-linear-gradient(top, #E3EBEB 0%, #B0D4D5 100%);
+  background-image: -ms-linear-gradient(top, #E3EBEB 0%, #B0D4D5 100%);
+  background-image: linear-gradient(to bottom, #E3EBEB 0%, #B0D4D5 100%); }
 
 body {
   color: #7f8484;
@@ -122,7 +121,7 @@ section {
   max-width: 980px;
   margin: 0 auto;
   display: none;
-  background: url(../img/paper_bg.png) top left repeat white;
+  background: url(../img/paper_bg.png) top left repeat #fff;
   border-radius: 4px;
   padding: 25px 0; }
   section.first {
@@ -230,7 +229,7 @@ form {
       border-color: #e2ca95;
       outline: none; }
   form .datepicker {
-    background: white url("../img/calendar.png") no-repeat 95%; }
+    background: #fff url("../img/calendar.png") no-repeat 95%; }
   form textarea {
     height: 150px; }
   form .btn-icon {
@@ -313,7 +312,7 @@ form input.half, .half {
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top: 4px solid black;
+  border-top: 4px solid #000;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
   border-bottom: 0 dotted;
@@ -338,8 +337,8 @@ form input.half, .half {
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
-  background-color: white;
-  border: 1px solid #cccccc;
+  background-color: #fff;
+  border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -359,11 +358,11 @@ form input.half, .half {
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: white;
+  color: #fff;
   background-color: #df4958; }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  color: white;
+  color: #fff;
   text-decoration: none;
   outline: 0;
   background-color: #df4958; }
@@ -402,7 +401,7 @@ form input.half, .half {
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   border-top: 0 dotted;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid #000;
   content: ""; }
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
@@ -411,6 +410,9 @@ form input.half, .half {
   margin-bottom: 1px; }
 
 @media (max-width: 767px) {
+  section .content {
+    width: 85%; }
+
   .btn, a.btn {
     padding: 14px 5px 12px;
     white-space: nowrap;
@@ -425,7 +427,7 @@ form input.half, .half {
     width: 100% !important;
     margin-right: 0; }
 
-  .half #date-daily {
+  #date-daily {
     margin-bottom: 15px; }
 
   form input[type="text"].half:last-child, form input[type="email"].half:last-child {
@@ -434,3 +436,5 @@ form input.half, .half {
 
   h1 {
     font-size: 3em; } }
+
+/*# sourceMappingURL=style.css.map */
