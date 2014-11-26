@@ -43,12 +43,12 @@
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
     <div class="content">
       <h2>Get Started</h2>
-      <form class="form">
+      <form id="start-form" class="form">
         <p><input type="text" class="eventTitle required" placeholder="Event Title"/></p>
         <p class="clearfix"><input class="half hostName required" type="text" placeholder="Your Name"/><input class="half hostEmail required" type="text" placeholder="Your Email"/></p>
         <p class="clearfix">
           <span class="input-append date" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
-            <input type="text" id="date-daily2" class="eventDate required" data-bind="value: eventDate"placeholder="Event Date" /> 
+            <input type="text" id="date-daily2" readonly="true" class="eventDate required" data-bind="value: eventDate"placeholder="Event Date" /> 
           </span>
         </p>
         <p><textarea placeholder="Description" class="eventDescription required" data-bind="value: description"></textarea></p>

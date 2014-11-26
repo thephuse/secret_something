@@ -107,35 +107,34 @@ $(function () {
   }
 
   //datepicker stuff (separate IDs to make sure on calendar closes when the other is activated)
-  $('#datepicker input').datepicker().on('changeDate', function (ev) {
-      $('#date-daily').change();
-  });
-  $('#date-daily').val();
-  $('#date-daily').on('change', function () {
-      $('#date-daily').val();
-      //console.log($('#date-daily').val());
-      //run validation check here to fix issue with datepicker value not registering in check below
-      validate();
-  });
-
   $('#datepicker2 input').datepicker().on('changeDate', function (ev) {
       $('#date-daily2').change();
   });
-  $('#date-daily2').val();
   $('#date-daily2').on('change', function () {
       $('#date-daily2').val();
       //console.log($('#date-daily2').val());
       //run validation check here to fix issue with datepicker value not registering in check below
-      validate();
+      // validate();
   });
 
   // if all fields are filled in, enable next button
-  $('form > *').on(("change", "keyup"), function(){
-    validate();
-  });
+  // $('form > *').on(("change", "keyup"), function(){
+  //   validate();
+  // });
 
   $('.add').click(function(){
       $(this).parents('section').find('.next').wrapInner('<span/>')
+  });
+
+  $('form > *').on(("change", "keyup"), function(){
+    if($('.eventTitle').val() !== '' && $('.hostName').val() !== '' && $('.hostEmail').val() !== '' && $('#date-daily2').val() !== '' && $('.eventDescription').val() !== '') {
+      $('.form .btn.next').removeClass('disabled');
+    } else {
+      if($('.form .btn.next:not(.disabled)')) {
+        //otherwise set it as disabled
+        $('.form .btn.next').addClass('disabled');
+      }
+    }
   });
 
 });
