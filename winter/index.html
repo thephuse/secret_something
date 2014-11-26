@@ -31,7 +31,7 @@
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
     <div class="content">
       <h1>Secret Santa</h1>
-      <p>This app is designed to help automate your Secret Santa gift exchange with friends or co-workers. Before getting started, please have a list of all participants' names and email addresses handy. After filling in the information on the following screens, your participants will be notified on the specified match date who they will be buying for (matches are assigned randomly) and when the gift exchange will take place.</p>
+      <p>Emails have been sent to all participants requesting their postal addresses and any special preferences. Match-ups will be sent out shortly for your exchange that will take place on:</p>
       <p><a class="btn next" href="#">Get Started</a></p>
     </div>
   </div>
@@ -47,11 +47,8 @@
         <p><input type="text" class="eventTitle required" placeholder="Event Title"/></p>
         <p class="clearfix"><input class="half hostName required" type="text" placeholder="Your Name"/><input class="half hostEmail required" type="text" placeholder="Your Email"/></p>
         <p class="clearfix">
-          <span class="input-append date half" id="datepicker" data-date="" data-date-format="yyyy-mm-dd">
-            <input type="text" id="date-daily" class="matchupDate required" data-bind="value: matchupDate" placeholder="Match-up Date" /> 
-          </span>
-          <span class="input-append date half" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
-            <input type="text" id="date-daily2" class="eventDate required" placeholder="Event Date" /> 
+          <span class="input-append date" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
+            <input type="text" id="date-daily2" class="eventDate required" data-bind="value: eventDate"placeholder="Event Date" /> 
           </span>
         </p>
         <p><textarea placeholder="Description" class="eventDescription required" data-bind="value: description"></textarea></p>
@@ -99,9 +96,9 @@
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
     <div class="content">
       <h1>Success!</h1>
-      <p>Emails have been sent to all participants requesting their postal addresses and any special preferences. Match-ups will be created and sent out on:</p>
+      <p>Emails have been sent to all participants informing them of their match and the exchange date for your event!</p>
 
-      <p class="event-date" data-bind="html: niceMatchupDate"></p>
+      <p class="event-date" data-bind="html: niceEventDate"></p>
 
       <p>Thanks for using Secret Santa!</p>
     </div>

@@ -34,28 +34,8 @@ function ViewModel() {
   self.eventTitle = ko.observable("");
   self.hostName = ko.observable("");
   self.hostEmail = ko.observable("");
-  self.matchupDate = ko.observable("");
   self.eventDate = ko.observable("");
   
-  self.niceMatchupDate = ko.computed(function() {
-    var datestring = self.matchupDate();
-    var d = new Date(datestring);
-    var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-    var currDate = d.getDate();
-    var sup = "";
-    if (currDate == 1 || currDate == 21 || currDate ==31){
-      sup = "st"; }
-    else if (currDate == 2 || currDate == 22){
-      sup = "nd"; }
-    else if (currDate == 3 || currDate == 23){
-      sup = "rd"; }
-    else {
-      sup = "th"; }
-    
-    var niceDate = monthNames[d.getMonth()] + " " + currDate + "<sup>" + sup + "</sup>, " + d.getFullYear();
-      return niceDate;
-    });
-
   self.niceEventDate = ko.computed(function() {
     var datestring = self.eventDate();
     var d = new Date(datestring);
