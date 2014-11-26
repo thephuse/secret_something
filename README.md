@@ -8,7 +8,7 @@ Overview
 
 Static HTML/CSS/JS site intended for use with a secret gift exchange. Currently themed for Christmas, but can be re-themed for use with any holiday.
 
-A sample can be found at [dev.thephuse.com/secret_something](http://dev.thephuse.com/secret_something/)
+A sample can be found at [dev.thephuse.com/secret_something](http://dev.thephuse.com/secret_something/). Please note that this is NOT a fully working copy and no participant emails will be sent from this sample page. See the Deployment section below for more details.
 
 Development
 -------------
