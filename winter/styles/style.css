@@ -197,7 +197,7 @@ input[type=radio]:checked + span {
   clear: both; }
 
 form {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto; }
   form p {
@@ -231,7 +231,8 @@ form {
   form .datepicker {
     background: #fff url("../img/calendar.png") no-repeat 95%; }
   form textarea {
-    height: 150px; }
+    height: 150px;
+    max-width: 100%; }
   form .btn-icon {
     position: absolute;
     right: -40px;
@@ -305,6 +306,40 @@ form input.half, .half {
   .btn.add, a.btn.add {
     margin-top: 1em;
     clear: left; }
+
+.participants span.half {
+  position: relative; }
+  .participants span.half input {
+    padding-right: 30px; }
+  .participants span.half .btn.btn-icon {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    margin-top: 0;
+    background: none;
+    color: #e2d9c5;
+    font-size: 30px; }
+.participants .person {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px dashed #e2d9c5;
+  text-align: left;
+  padding: 10px 0 5px; }
+  .participants .person:last-of-type {
+    margin-bottom: 20px; }
+  .participants .person .name, .participants .person .email {
+    margin-left: 15px; }
+  .participants .person .email {
+    color: #e2d9c5;
+    padding-right: 20px; }
+  .participants .person .btn.btn-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 24px;
+    background: none;
+    color: #e2d9c5; }
 
 .caret {
   display: inline-block;

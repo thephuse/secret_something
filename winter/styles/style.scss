@@ -257,7 +257,7 @@ input[type=radio]:checked + span {
 }
 
 form {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   p { position: relative; }
@@ -295,6 +295,7 @@ form {
   }
   textarea {
     height: 150px;
+    max-width: 100%;
   }
   .btn-icon {
     position: absolute;
@@ -383,6 +384,53 @@ form input.half, .half {
 }
 
 
+//
+// Participants
+// --------------------------------------------------
+.participants {
+  span.half {
+    position: relative;
+    input {
+      padding-right: 30px;
+    }
+    .btn.btn-icon {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      margin-top: 0;
+      background: none;
+      color: $darkgold;
+      font-size: 30px;
+    }
+  }
+
+  .person {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px dashed $darkgold;
+    text-align: left;
+    padding: 10px 0 5px;
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+    .name, .email {
+      margin-left: 15px;
+    }
+    .email {
+      color: $darkgold;
+      padding-right: 20px;
+    }
+    .btn.btn-icon {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -10px;
+      font-size: 24px;
+      background: none;
+      color: $darkgold;
+    }
+  }
+}
 
 
 
