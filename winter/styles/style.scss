@@ -380,6 +380,7 @@ form input.half, .half {
   &.add {
     margin-top: 1em;
     clear: left;
+    cursor: pointer;
   }
 }
 
@@ -428,6 +429,12 @@ form input.half, .half {
       font-size: 24px;
       background: none;
       color: $darkgold;
+    }
+  }
+
+  #memberEmail {
+    &.disabled + .btn.add {
+      display: none;
     }
   }
 }

@@ -72,11 +72,11 @@
           <a href="#" class="btn btn-icon" data-bind="click: $root.removeMember, visible: $root.members().length > 0">&times;</a>
         </div>
       </div>
-      <form>
+      <form id="participants-form">
         <p class="clearfix">
           <input class="half" type="text" placeholder="Name" id="memberName"/>
           <span class="half">
-            <input type="text" placeholder="Email Address" id="memberEmail"/>
+            <input type="text" placeholder="Email Address" id="memberEmail" class="disabled"/>
             <a class="btn btn-icon add" href="#" data-bind="click: $root.addMember">+</a>
           </span>
         </p>

@@ -111,7 +111,7 @@ $(function () {
   var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 
   //VALIDATION CHECKS
-  $('form > *').on(("change", "keyup"), function(){
+  $('#start-form > *').on(("change", "keyup"), function(){
     if($('.eventTitle').val() !== '' && $('.hostName').val() !== '' && $('#date-daily2').val() !== '' && $('.eventDescription').val() !== '' && testEmail.test($('.hostEmail').val())) {
       $('.form .btn.next').removeClass('disabled');
     } else {
@@ -123,13 +123,15 @@ $(function () {
   });
 
 
-  //watch input and check against validation
-  // $('.hostEmail').bind('keyup', function(){
-  //   if(testEmail.test($('.hostEmail').val())){
-  //     $(this).addClass('valid');
-  //   } else {
-  //     $(this).removeClass('valid');
-  //   }
-  // });
+  $('#participants-form > *').on(("change", "keyup"), function(){
+    if($('#memberName').val() !== '' && testEmail.test($('#memberEmail').val())) {
+      $('#memberEmail').removeClass('disabled');
+    } else {
+      $('#memberEmail').addClass('disabled');
+    }
+  });
+  $('#participants-form .btn.add').click(function(){
+    $('#memberEmail').addClass('disabled');
+  });
 
 });
