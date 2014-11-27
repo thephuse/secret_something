@@ -231,6 +231,7 @@ form {
   form .datepicker {
     background: #fff url("../img/calendar.png") no-repeat 95%; }
   form textarea {
+    min-height: 100px;
     height: 150px;
     max-width: 100%; }
   form .btn-icon {
@@ -447,6 +448,9 @@ form input.half, .half {
   bottom: 100%;
   margin-bottom: 1px; }
 
+.hidden {
+  display: none; }
+
 @media (max-width: 767px) {
   section .content {
     width: 85%; }
@@ -475,19 +479,33 @@ form input.half, .half {
   h1 {
     font-size: 3em; }
 
+  h2 {
+    font-size: 2.1em; }
+
+  form input.half:last-child, .half:last-child {
+    margin-left: 0;
+    margin-top: 15px; }
+
+  .participants .person .name, .participants .person .email {
+    margin-left: 0; }
+
+  input[type="text"], input[type="email"], input[type="search"], input[type="password"], textarea {
+    -webkit-appearance: caret;
+    -moz-appearance: caret;
+    /* mobile firefox too! */ }
+
   footer {
     overflow-x: hidden; }
     footer ul {
       text-align: center; }
       footer ul li {
         display: block; }
+        footer ul li:first-child {
+          margin-bottom: 10px; }
         footer ul li.right {
           float: none;
           display: inline-block;
-          margin-top: 12px;
-          margin-left: 0; }
-        footer ul li .fb-like {
-          vertical-align: top;
-          margin-top: -7px; } }
+          margin-left: 0;
+          vertical-align: top; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -294,6 +294,7 @@ form {
     background: #fff url("../img/calendar.png") no-repeat 95%;
   }
   textarea {
+    min-height: 100px;
     height: 150px;
     max-width: 100%;
   }
@@ -642,6 +643,10 @@ $dropdown-caret-color:           #000;
   }
 }
 
+.hidden {
+  display: none;
+}
+
 //
 // Phones
 // --------------------------------------------------
@@ -676,21 +681,34 @@ $dropdown-caret-color:           #000;
   h1 {
     font-size: 3em;
   }
+  h2 {
+    font-size: 2.1em;
+  }
+  form input.half:last-child, .half:last-child {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  .participants .person .name, .participants .person .email {
+    margin-left: 0;
+  }
+  input[type="text"], input[type="email"], input[type="search"], input[type="password"], textarea {
+    -webkit-appearance: caret;
+    -moz-appearance: caret; /* mobile firefox too! */
+  }
   footer {
     overflow-x: hidden;
     ul {
       text-align: center;
       li {
         display: block;
+        &:first-child {
+          margin-bottom: 10px;
+        }
         &.right {
           float: none;
           display: inline-block;
-          margin-top: 12px;
           margin-left: 0;
-        }
-        .fb-like {
           vertical-align: top;
-          margin-top: -7px;
         }
       }
     }

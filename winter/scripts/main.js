@@ -95,12 +95,12 @@ $(function () {
 
   //datepicker
   $('#datepicker2 input').datepicker().on('changeDate', function (ev) {
-      $('#date-daily2').change();
+    $('#date-daily2').change();
   });
   $('#date-daily2').on('change', function () {
-      $('#date-daily2').val();
+    $('#date-daily2').val();
+    $( "#date-daily2" ).datepicker("hide");
   });
-
 
   $('.add').click(function(){
       $(this).parents('section').find('.next').wrapInner('<span/>')
