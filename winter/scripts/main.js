@@ -29,13 +29,9 @@ function ViewModel() {
 
   // Editable Data
   self.members = ko.observableArray();
-  self.description = ko.observable();
 
-  self.eventTitle = ko.observable("");
-  self.hostName = ko.observable("");
-  self.hostEmail = ko.observable("");
   self.eventDate = ko.observable("");
-  
+
   self.niceEventDate = ko.computed(function() {
     var datestring = self.eventDate();
     var d = new Date(datestring);
@@ -55,6 +51,9 @@ function ViewModel() {
       return niceDate;
     });
 
+  self.eventTitle = ko.observable("");
+  self.hostName = ko.observable("");
+  self.hostEmail = ko.observable("");
   self.description = ko.observable("");
 
   // Operations

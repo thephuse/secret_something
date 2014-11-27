@@ -45,11 +45,11 @@
       <h2>Get Started</h2>
       <p>All fields required. Please be sure to enter a valid email.</p>
       <form id="start-form" class="form">
-        <p><input type="text" class="eventTitle required" placeholder="Event Title"/></p>
-        <p class="clearfix"><input class="half hostName required" type="text" placeholder="Your Name"/><input class="half hostEmail required" type="text" placeholder="Your Email"/></p>
+        <p><input type="text" class="eventTitle required" data-bind="value: eventTitle" placeholder="Event Title"/></p>
+        <p class="clearfix"><input class="half hostName required" type="text" data-bind="value: hostName"placeholder="Your Name"/><input class="half hostEmail required" type="text" data-bind="value: hostEmail" placeholder="Your Email"/></p>
         <p class="clearfix">
           <span class="input-append date" id="datepicker2" data-date="" data-date-format="yyyy-mm-dd">
-            <input type="text" id="date-daily2" readonly="true" class="eventDate required" data-bind="value: eventDate"placeholder="Event Date" /> 
+            <input type="text" id="date-daily2" readonly="true" class="eventDate required" data-bind="value: eventDate" placeholder="Event Date" /> 
           </span>
         </p>
         <p><textarea placeholder="Description" class="eventDescription required" data-bind="value: description"></textarea></p>
@@ -86,6 +86,20 @@
       <p><a class="btn next" href="#" 
         data-bind="css: members().length < 2 ? 'disabled' : '',
                    text: 'Continue'"></a></p>
+   
+
+
+
+
+
+      <form action="">
+        <input type="text" data-bind="value: eventTitle">
+        <input type="text" data-bind="value: eventDate">
+        <input type="text" data-bind="value: hostName">
+        <input type="text" data-bind="value: hostEmail">
+        <textarea name="event-desc" id="event-desc" cols="30" rows="10" data-bind="value: description"></textarea>
+
+      </form>
     </div>
   </div>
 </section>
