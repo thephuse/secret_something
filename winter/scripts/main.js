@@ -28,8 +28,6 @@ function ViewModel() {
   var self = this;
 
   // Editable Data
-  self.members = ko.observableArray();
-
   self.eventDate = ko.observable("");
 
   self.niceEventDate = ko.computed(function() {
@@ -55,6 +53,8 @@ function ViewModel() {
   self.hostName = ko.observable("");
   self.hostEmail = ko.observable("");
   self.description = ko.observable("");
+  self.members = ko.observableArray();
+
 
   // Operations
   self.addMember = function () {
@@ -132,5 +132,23 @@ $(function () {
   $('#participants-form .btn.add').click(function(){
     $('#memberEmail').addClass('disabled');
   });
+
+
+  var names = ["Sean","Kyle","Emily","Nick","Cotter","Brian","Jeremy","Kimmy","Pat","Johnny"];
+
+  var arr1 = names.slice(), // copy array
+      arr2 = names.slice(); // copy array again
+
+  arr1.sort(function() { return 0.5 - Math.random();}); // shuffle arrays
+  arr2.sort(function() { return 0.5 - Math.random();});
+
+  while (arr1.length) {
+      var name1 = arr1.pop(), // get the last value of arr1
+          name2 = arr2[0] == name1 ? arr2.pop() : arr2.shift();
+          //        ^^ if the first value is the same as name1, 
+          //           get the last value, otherwise get the first
+
+      console.log(name1 + ' gets ' + name2);
+  }
 
 });

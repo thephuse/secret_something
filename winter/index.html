@@ -97,7 +97,13 @@
         <input type="text" data-bind="value: eventDate">
         <input type="text" data-bind="value: hostName">
         <input type="text" data-bind="value: hostEmail">
-        <textarea name="event-desc" id="event-desc" cols="30" rows="10" data-bind="value: description"></textarea>
+        <textarea name="event-desc" id="event-desc" data-bind="value: description"></textarea>
+        <div data-bind="foreach: members">
+          <div class="person">       
+            <span class="name" data-bind="text: name"></span>
+            <span class="email" data-bind="text: email"></span>
+          </div>
+        </div>
 
       </form>
     </div>
