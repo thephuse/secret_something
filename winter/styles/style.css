@@ -473,6 +473,21 @@ form input.half, .half {
     margin-top: 15px; }
 
   h1 {
-    font-size: 3em; } }
+    font-size: 3em; }
+
+  footer {
+    overflow-x: hidden; }
+    footer ul {
+      text-align: center; }
+      footer ul li {
+        display: block; }
+        footer ul li.right {
+          float: none;
+          display: inline-block;
+          margin-top: 12px;
+          margin-left: 0; }
+        footer ul li .fb-like {
+          vertical-align: top;
+          margin-top: -7px; } }
 
 /*# sourceMappingURL=style.css.map */

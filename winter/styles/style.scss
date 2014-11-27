@@ -676,4 +676,23 @@ $dropdown-caret-color:           #000;
   h1 {
     font-size: 3em;
   }
+  footer {
+    overflow-x: hidden;
+    ul {
+      text-align: center;
+      li {
+        display: block;
+        &.right {
+          float: none;
+          display: inline-block;
+          margin-top: 12px;
+          margin-left: 0;
+        }
+        .fb-like {
+          vertical-align: top;
+          margin-top: -7px;
+        }
+      }
+    }
+  }
 }
