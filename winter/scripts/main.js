@@ -55,6 +55,13 @@ function ViewModel() {
   self.description = ko.observable("");
   self.members = ko.observableArray();
 
+  // add organizer to participants array once they've input their info
+  if(self.hostName !== '' && self.hostEmail !== ''){
+    self.members = ko.observableArray([
+      { name: self.hostName, email: self.hostEmail}
+    ]);
+  }
+
 
   // Operations
   self.addMember = function () {

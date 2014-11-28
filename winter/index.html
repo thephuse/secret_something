@@ -82,7 +82,7 @@
         </p>
       </form>
 
-      <p>You currently have <span data-bind="text: members().length"></span> friend<span data-bind="visible: members().length != 1">s</span>. <span data-bind="visible: members().length < 2">Please enter information for at least two participants.</span></p>
+      <p>You currently have <span data-bind="text: members().length"></span> participant<span data-bind="visible: members().length != 1">s</span>. <span data-bind="visible: members().length < 3">Please enter information for at least three participants.</span></p>
       <p><a class="btn next" href="#" 
         data-bind="css: members().length < 2 ? 'disabled' : '',
                    text: 'Continue'"></a></p>
@@ -111,7 +111,7 @@
 </section>
 
 
-<section>
+<section class="success">
   <div class="content-wrapper">
     <i class="left-top ornament"></i><i class="middle-top"></i><i class="right-top ornament"></i>
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
