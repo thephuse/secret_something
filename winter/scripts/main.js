@@ -52,13 +52,13 @@ function ViewModel() {
   self.eventTitle = ko.observable("");
   self.hostName = ko.observable("");
   self.hostEmail = ko.observable("");
-  self.description = ko.observable("");
+  self.desc = ko.observable("");
   self.members = ko.observableArray();
 
   // add organizer to participants array once they've input their info
   if(self.hostName !== '' && self.hostEmail !== ''){
     self.members = ko.observableArray([
-      { name: self.hostName, email: self.hostEmail}
+      { name: self.hostName, email: self.hostEmail }
     ]);
   }
 
@@ -71,18 +71,40 @@ function ViewModel() {
     resize();
   };
   self.removeMember = function (member) {
-    //console.log("member: ", member);
     self.members.remove(member);
     resize();
+  };
+
+  self.sendAllInfoToServer = function (item, event) {
+    // check that at least 3 members are added (including host)
+    if(self.members().length < 3){
+      return;
+    }
+    var data = {
+      hostName: self.hostName(),
+      hostEmail: self.hostEmail(),
+      eventTitle: self.eventTitle(),
+      desc: self.desc(),
+      members: []
+    };
+    var allMembers = self.members();
+
+    // add members to data members array
+    for (var i = 0; i < allMembers.length; i++) {
+      data.members.push({ 
+        name: allMembers[i].name(), 
+        email: allMembers[i].email()
+      });
+    };
   };
 
 };
 
 ko.applyBindings(new ViewModel());
 
-  $(window).resize(function () {
-    resize();
-  });
+$(window).resize(function () {
+  resize();
+});
 
 //
 $(function () {
@@ -159,3 +181,23 @@ $(function () {
   }
 
 });
+
+// add test data when testing form
+function addTestData(extraEmails){
+  $('.btn.next').click();
+  $('input.eventTitle').val("Title").trigger('keyup').trigger('change');
+  $('input.hostName').val("Host Name").trigger('keyup').trigger('change');
+  $('input.hostEmail').val("host@dom.ext").trigger('keyup').trigger('change');
+  $('input#date-daily2').val("11/27/2014").trigger('keyup').trigger('change');
+  $('textarea.eventDescription').val("description").trigger('keyup').trigger('change');
+  $('.btn.next').click();
+  if(extraEmails !== undefined){
+    for (var i = 0; i < extraEmails; i++) {
+      var num = i + 1;
+      $('#memberName').val('Member '+num).trigger('keyup').trigger('change');
+      $('#memberEmail').val('Member.'+num+'@dom.ext').trigger('keyup').trigger('change');
+      $('#participants-form .btn.add').click();
+    };
+  }
+
+}

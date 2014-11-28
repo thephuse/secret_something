@@ -52,7 +52,7 @@
             <input type="text" id="date-daily2" readonly="true" class="eventDate required" data-bind="value: eventDate" placeholder="Event Date" /> 
           </span>
         </p>
-        <p><textarea placeholder="Description" class="eventDescription required" data-bind="value: description"></textarea></p>
+        <p><textarea placeholder="Description" class="eventDescription required" data-bind="value: desc"></textarea></p>
         <p><a class="btn next disabled" href="#">Continue</a></p>
       </form>
     </div>
@@ -84,28 +84,12 @@
 
       <p>You currently have <span data-bind="text: members().length"></span> participant<span data-bind="visible: members().length != 1">s</span>. <span data-bind="visible: members().length < 3">Please enter information for at least three participants.</span></p>
       <p><a class="btn next" href="#" 
-        data-bind="css: members().length < 2 ? 'disabled' : '',
-                   text: 'Continue'"></a></p>
-   
-
-
-
-
-
-      <form action="" class="hidden">
-        <input type="text" data-bind="value: eventTitle">
-        <input type="text" data-bind="value: eventDate">
-        <input type="text" data-bind="value: hostName">
-        <input type="text" data-bind="value: hostEmail">
-        <textarea name="event-desc" id="event-desc" data-bind="value: description"></textarea>
-        <div data-bind="foreach: members">
-          <div class="person">       
-            <span class="name" data-bind="text: name"></span>
-            <span class="email" data-bind="text: email"></span>
-          </div>
-        </div>
-
-      </form>
+        data-bind="
+          css: members().length < 3 ? 'disabled' : '',
+          click: members().length >= 3 ? sendAllInfoToServer : function(){},
+          text: 'Send Emails'
+        "></a>
+      </p>
     </div>
   </div>
 </section>
