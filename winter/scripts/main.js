@@ -84,6 +84,7 @@ function ViewModel() {
       hostName: self.hostName(),
       hostEmail: self.hostEmail(),
       eventTitle: self.eventTitle(),
+      eventDate: self.niceEventDate(),
       desc: self.desc(),
       members: []
     };
@@ -96,6 +97,28 @@ function ViewModel() {
         email: allMembers[i].email()
       });
     };
+
+    //send data to PHP
+    $.ajax({
+      url: 'process.php',
+      type: 'POST',
+      dataType: 'text',
+      data: { data: JSON.stringify(data) },
+    })
+    .done(function(data) {
+      console.log("success");
+      // ADD HERE: redirection to existing success page (disable current click direct there)
+      console.log(data);
+    })
+    .fail(function(data) {
+      console.log("error");
+      // ADD HERE: redirection to error page (something went wrong, please start again)
+      console.log(data);
+    })
+    .always(function(data) {
+      console.log("complete");
+    });
+    
   };
 
 };
@@ -162,24 +185,6 @@ $(function () {
     $('#memberEmail').addClass('disabled');
   });
 
-
-  var names = ["Sean","Kyle","Emily","Nick","Cotter","Brian","Jeremy","Kimmy","Pat","Johnny"];
-
-  var arr1 = names.slice(), // copy array
-      arr2 = names.slice(); // copy array again
-
-  arr1.sort(function() { return 0.5 - Math.random();}); // shuffle arrays
-  arr2.sort(function() { return 0.5 - Math.random();});
-
-  while (arr1.length) {
-      var name1 = arr1.pop(), // get the last value of arr1
-          name2 = arr2[0] == name1 ? arr2.pop() : arr2.shift();
-          //        ^^ if the first value is the same as name1, 
-          //           get the last value, otherwise get the first
-
-      console.log(name1 + ' gets ' + name2);
-  }
-
 });
 
 // add test data when testing form
@@ -198,6 +203,7 @@ function addTestData(extraEmails){
       $('#memberEmail').val('Member.'+num+'@dom.ext').trigger('keyup').trigger('change');
       $('#participants-form .btn.add').click();
     };
+  $('.btn.next').click();
   }
 
 }
