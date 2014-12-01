@@ -187,12 +187,26 @@ $(function () {
 
 });
 
-// add test data when testing form
-function addTestData(extraEmails){
+/* 
+  To easily add test data when testing form, uncomment the below code and fill in the following necessary information
+
+    * hostEmail - replace your-email@your-domain.com with your own email address
+    * memberEmail - replace your-email@your-domain.com with your own email address or another account you have access to
+      ** Note: If you use Gmail / Google Apps, you can use the following as the value to add incremental email addresses that still come to your inbox:
+        'your-email+Member.'+num+'@your-domain.com'
+
+  You can also feel free to update the values for eventTitle, hostName, eventDescription and date-daily2
+  
+  After adding in the necessary info, reload your page in your browser and run addTestData(number) in your console 
+  (with 'number' being the numerical value of the number of participants you want to add in your test).
+  
+  what information to add - memberEmail
+*/
+/*function addTestData(extraEmails){
   $('.btn.next').click();
   $('input.eventTitle').val("Test Event").trigger('keyup').trigger('change');
   $('input.hostName').val("Test Host").trigger('keyup').trigger('change');
-  $('input.hostEmail').val("kelley@thephuse.com").trigger('keyup').trigger('change');
+  $('input.hostEmail').val("your-email@your-domain.com").trigger('keyup').trigger('change');
   $('input#date-daily2').val("12/03/2014").trigger('keyup').trigger('change');
   $('textarea.eventDescription').val("Event test description").trigger('keyup').trigger('change');
   $('.btn.next').click();
@@ -200,10 +214,10 @@ function addTestData(extraEmails){
     for (var i = 0; i < extraEmails; i++) {
       var num = i + 1;
       $('#memberName').val('Member '+num).trigger('keyup').trigger('change');
-      $('#memberEmail').val('kelley+Member.'+num+'@thephuse.com').trigger('keyup').trigger('change');
+      $('#memberEmail').val('your-email@your-domain.com').trigger('keyup').trigger('change');
       $('#participants-form .btn.add').click();
     };
   $('.btn.next').click();
   }
 
-}
+}*/
