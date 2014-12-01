@@ -202,20 +202,23 @@ Class SecretSanta {
 
       $mail->From = $data->hostEmail;
       $mail->FromName = $data->hostName;
-      $mail->Subject = $data->hostName . " has invited you to participate in " . $data->eventTitle ."!";
+      $mail->Subject = "Your match for ". $data->eventTitle . ". Notice sent by " . $data->hostName .".";
       $mail->Body = strip_tags(
-        "Hello, {$giver['name']}!\n\n" 
+        "Hello, {$giver['name']}!\n\n"
        
-        . $data->hostName . " has invited you to participate in " . $data->eventTitle ."! You will be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}), and your gift exchange is scheduled for " . $data->eventDate . ".\n\n"
-       
-        . "About This Event:\n" 
-        . $data->desc ."\n\n" 
+        . "Yes! Here's your match for " . $data->eventTitle .":\n\n"
 
-        . "Any additional questions can be directed to " . $data->hostName . " (" . $data->hostEmail . ").\n\n\n\n"
+        . "You will be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}), and your gift exchange is scheduled for " . $data->eventDate . ".\n\n"
+      
+        . "I bet your gift will joy and delight!\n\n"
+
+        . "Your organizer, " . $data->hostName .", included the following details for your reference:\n"
+        . $data->desc ."\n\n"
+
+        . "Any additional questions can be directed to Matt (matt@thephuse.com).\n\n\n\n"
 
         . "---------------------------------\n"
-
-        . "This is a system generated email. Please do not reply to this email. Questions or comments should be directed to the event host via the email noted above. "
+        . "This is a system generated email. Please do not reply to this email. Questions or comments should be directed to the event host via the email noted above."
       );
 
       $mail->addAddress($giver['email'], $giver['name']);     // Add a recipient
