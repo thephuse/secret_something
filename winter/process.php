@@ -1,5 +1,7 @@
 <?php 
 
+  require 'PHPMailer/PHPMailerAutoload.php';
+
   // get request variables that are sent from AJAX
   $data = $_REQUEST['data'];
 
@@ -166,24 +168,66 @@ Class SecretSanta {
    * @param $matched users
    */
   private function sendEmails($assigned_users){
+
+
     global $data;
+
+    /**********************
+      Setup the connections for PHP mailer to send via an smtp server.
+      If you have not set these settings yet edit the file:
+
+        mail-config.sample.php
+
+      And save the file as:
+
+        mail-config.php
+
+      Using the info for your own smtp server
+    **********************/
+    require('mail-config.php');
+
     //For each user
     foreach($assigned_users as $giver){
-      //Compose the email
-      $email_subject = $data->hostName . " has invited you to participate in " . $data->eventTitle ."!";
-      $email_body = strip_tags("Hello, {$giver['name']}! 
-        " . $data->hostName . " has invited you to participate in " . $data->eventTitle ."! You will be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}), and your gift exchange is scheduled for " . $data->eventDate . ".
+      // set up phpmailer
+      $mail = new PHPMailer;
 
-        About This Event:
-        " . $data->desc ."
+      $mail->isSMTP($mail_config_isSMTP);                                      // Set mailer to use SMTP
+      $mail->Host = $mail_config_Host;
+      $mail->SMTPAuth = $mail_config_SMTPAuth;
+      $mail->Username = $mail_config_Username;
+      $mail->Password = $mail_config_Password;
+      $mail->SMTPSecure = $mail_config_SMTPSecure;
+      $mail->Port = $mail_config_Port;
 
-        Any additional questions can be directed to " . $data->hostName . " (" . $data->hostEmail . ").
 
-        This is a system generated email. Please do not reply to this email. Questions or comments should be directed to the email noted above.
+      $mail->From = $data->hostEmail;
+      $mail->FromName = $data->hostName;
+      $mail->Subject = $data->hostName . " has invited you to participate in " . $data->eventTitle ."!";
+      $mail->Body = strip_tags(
+        "Hello, {$giver['name']}!\n\n" 
+       
+        . $data->hostName . " has invited you to participate in " . $data->eventTitle ."! You will be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}), and your gift exchange is scheduled for " . $data->eventDate . ".\n\n"
+       
+        . "About This Event:\n" 
+        . $data->desc ."\n\n" 
 
-        ");
+        . "Any additional questions can be directed to " . $data->hostName . " (" . $data->hostEmail . ").\n\n\n\n"
 
-  var_dump($email_body);
+        . "---------------------------------\n"
+
+        . "This is a system generated email. Please do not reply to this email. Questions or comments should be directed to the event host via the email noted above. "
+      );
+
+      $mail->addAddress($giver['email'], $giver['name']);     // Add a recipient
+      if(!$mail->send()) {
+          echo 'Message could not be sent.';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+          echo "\n";
+          echo "Message has been sent to ".$giver['email'];
+      }
+
+
     } 
   }
 }
