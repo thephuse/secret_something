@@ -10,7 +10,9 @@
   <link rel="stylesheet" type="text/css" href="styles/datepicker.css" />
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Elsie:400,900' rel='stylesheet' type='text/css'>
-  
+
+  <script src="scripts/modernizr.js"></script>
+
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -126,6 +128,16 @@
 <script type="text/javascript" src="scripts/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
 <div id="fb-root"></div>
+
+<!--[if lte IE 8]>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      alert('This application has not been optimized for your browser. To view this site as intended, please update your browser or use an alternate browser.');
+    });
+  </script>
+<![endif]-->
+  
+
 
 </body>
 </html>
