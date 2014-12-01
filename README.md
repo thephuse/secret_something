@@ -1,4 +1,4 @@
-secret something
+Secret Something
 ======
 
 Secret Something Project
