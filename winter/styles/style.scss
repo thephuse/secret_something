@@ -285,6 +285,9 @@ form {
     &:-ms-input-placeholder {  
        color: #cbbea2;  
     }
+    &::-ms-clear {
+      display: none;
+    }
     &:focus {
       border-color: $darkergold;
       outline: none;

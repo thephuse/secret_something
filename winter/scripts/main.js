@@ -131,6 +131,15 @@ $(window).resize(function () {
 
 //
 $(function () {
+
+  //Placeholders for lte IE 9
+  $('input, textarea').placeholder();
+
+  // initially clear all input values because IE was storing the data and messing up data collection
+  $('form').children().find('input,textarea').each(function(){
+     $(this).val('');
+  });
+
   resize();
 
   $('.next').click(function (e) {

@@ -225,6 +225,8 @@ form {
       color: #cbbea2; }
     form input[type="text"]:-ms-input-placeholder, form input[type="email"]:-ms-input-placeholder, form textarea:-ms-input-placeholder {
       color: #cbbea2; }
+    form input[type="text"]::-ms-clear, form input[type="email"]::-ms-clear, form textarea::-ms-clear {
+      display: none; }
     form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
       border-color: #e2ca95;
       outline: none; }
