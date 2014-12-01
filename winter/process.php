@@ -210,8 +210,6 @@ Class SecretSanta {
 
         . "You will be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}), and your gift exchange is scheduled for " . $data->eventDate . ".\n\n"
       
-        . "I bet your gift will joy and delight!\n\n"
-
         . "Your organizer, " . $data->hostName .", included the following details for your reference:\n"
         . $data->desc ."\n\n"
 
