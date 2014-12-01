@@ -186,6 +186,9 @@ $(function () {
   $('#participants-form > *').on(("change", "keyup"), function(){
     if($('#memberName').val() !== '' && testEmail.test($('#memberEmail').val())) {
       $('#memberEmail').removeClass('disabled');
+      if ( event.which == 13 ) { // if they hit the enter button, add the participant
+        $('#participants-form .btn.add').trigger('click');
+      }
     } else {
       $('#memberEmail').addClass('disabled');
     }
