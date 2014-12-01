@@ -10,7 +10,7 @@ Static HTML/CSS/JS site intended for use with a secret gift exchange. Currently 
 
 This project sends participant notification emails via [Mandrill](http://mandrillapp.com)'s SMTP configuration.
 
-A working sample can be found at [dev.thephuse.com/secret](http://dev.thephuse.com/secret/).
+A working sample can be found at [secretsanta.phuse.ca](http://secretsanta.phuse.ca/).
 
 Development
 -------------
