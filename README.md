@@ -8,7 +8,9 @@ Overview
 
 Static HTML/CSS/JS site intended for use with a secret gift exchange. Currently themed for Christmas, but can be re-themed for use with any holiday.
 
-A sample can be found at [dev.thephuse.com/secret_something](http://dev.thephuse.com/secret_something/). Please note that this is NOT a fully working copy and no participant emails will be sent from this sample page. See the Deployment section below for more details.
+This project sends participant notification emails via [Mandrill](http://mandrillapp.com)'s SMTP configuration.
+
+A working sample can be found at [dev.thephuse.com/secret](http://dev.thephuse.com/secret/).
 
 Development
 -------------
@@ -26,4 +28,4 @@ sass --watch style.scss:style.css # alternatively compile sass using a GUI
 
 Deployment
 -------------
-This site is intended to be hosted on your own servers. Simply update any files needed to suit your needs and upload all site files to your server via FTP.
+This site can easily be hosted on your own servers. In addition to creating a [Mandrill](http://mandrillapp.com) account and filling in the custom information in mail-config.sample.php (resave the file as mail-config.php), simply update any other files needed to suit your needs and upload all site files to your server via FTP.
