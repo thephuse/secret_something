@@ -310,7 +310,8 @@ form input.half, .half {
   .btn.add, a.btn.add {
     margin-top: 1em;
     clear: left;
-    cursor: pointer; }
+    cursor: pointer;
+    color: #df4958 !important; }
 
 .participants span.half {
   position: relative; }
