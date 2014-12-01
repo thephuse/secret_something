@@ -32,7 +32,8 @@ $contentwidth: 840px;
 $bodycolor: #7f8484;
 $lightpink: #e77782;
 $pink: #df4958;
-$hoverpink: #efa4ab;
+$hoverpink: #c04854;
+$disabledpink: #efa4ab;
 $mediumpink: #a73843;
 $darkpink: #d29ba0;
 $shadow: #a73843;
@@ -375,7 +376,7 @@ form input.half, .half {
   }
   &.disabled {
     cursor: default;
-    background: $hoverpink;
+    background: $disabledpink;
     box-shadow: 0 3px 0 $darkpink;
     span {
       border-color: #f1b9be; 
