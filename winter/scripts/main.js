@@ -190,17 +190,17 @@ $(function () {
 // add test data when testing form
 function addTestData(extraEmails){
   $('.btn.next').click();
-  $('input.eventTitle').val("Title").trigger('keyup').trigger('change');
-  $('input.hostName').val("Host Name").trigger('keyup').trigger('change');
-  $('input.hostEmail').val("host@dom.ext").trigger('keyup').trigger('change');
-  $('input#date-daily2').val("11/27/2014").trigger('keyup').trigger('change');
-  $('textarea.eventDescription').val("description").trigger('keyup').trigger('change');
+  $('input.eventTitle').val("Test Event").trigger('keyup').trigger('change');
+  $('input.hostName').val("Test Host").trigger('keyup').trigger('change');
+  $('input.hostEmail').val("kelley@thephuse.com").trigger('keyup').trigger('change');
+  $('input#date-daily2').val("12/03/2014").trigger('keyup').trigger('change');
+  $('textarea.eventDescription').val("Event test description").trigger('keyup').trigger('change');
   $('.btn.next').click();
   if(extraEmails !== undefined){
     for (var i = 0; i < extraEmails; i++) {
       var num = i + 1;
       $('#memberName').val('Member '+num).trigger('keyup').trigger('change');
-      $('#memberEmail').val('Member.'+num+'@dom.ext').trigger('keyup').trigger('change');
+      $('#memberEmail').val('kelley+Member.'+num+'@thephuse.com').trigger('keyup').trigger('change');
       $('#participants-form .btn.add').click();
     };
   $('.btn.next').click();
