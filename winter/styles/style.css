@@ -487,7 +487,12 @@ form input.half, .half {
     margin-top: 15px; }
 
   .participants .person .name, .participants .person .email {
-    margin-left: 0; }
+    margin-left: 0;
+    display: inline-block;
+    max-width: 80%;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap; }
 
   input[type="text"], input[type="email"], input[type="search"], input[type="password"], textarea {
     -webkit-appearance: caret;
