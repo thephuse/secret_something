@@ -1,4 +1,0 @@
-secret
-======
-
-Secret Satan Project
