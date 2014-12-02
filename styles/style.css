@@ -299,11 +299,12 @@ form input.half, .half {
       background: #d29ba0; }
   .btn.disabled, a.btn.disabled {
     cursor: default;
-    background: #efa4ab;
-    box-shadow: 0 3px 0 #d29ba0; }
+    background: #dbdad9;
+    box-shadow: none; }
     .btn.disabled span, a.btn.disabled span {
-      border-color: #f1b9be;
-      background-image: url(../img/arrow_hover.png); }
+      border-color: #e4e4e3;
+      color: #f6f6f6;
+      background-image: url(../img/arrow_diabled.png); }
   .btn span, a.btn span {
     border-radius: 2px;
     border: 1px solid #e77782;
