@@ -202,22 +202,21 @@ Class SecretSanta {
 
       $mail->From = $data->hostEmail;
       $mail->FromName = $data->hostName;
-      $mail->Subject = "Your match for ". $data->eventTitle . ". Notice sent by " . $data->hostName .".";
+      $mail->Subject = "Your match for ". $data->eventTitle . "!";
       $mail->Body = strip_tags(
         "Hello, {$giver['name']}!\n\n"
        
-        . "Yes! Here's your match for " . $data->eventTitle .":\n\n"
-
-        . "You will be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}), and your gift exchange is scheduled for " . $data->eventDate . ".\n\n"
+        . "The exchange for " . $data->eventTitle ." is scheduled to take place on " . $data->eventDate . ", and you'll be purchasing a gift for {$giver['giving_to']['name']} ({$giver['giving_to']['email']}).\n\n"
       
-        . "Your organizer, " . $data->hostName .", included the following details for your reference:\n"
+        . "Your organizer, " . $data->hostName .", included the following details for your reference:\n\n"
+        
         . $data->desc ."\n\n"
 
-        . "Any additional questions can be directed to " . $data->hostName ." (" . $data->hostEmail .").\n\n"
+        . "Any additional questions can be directed to " . $data->hostName ." (" . $data->hostEmail .").\n\n\n\n"
 
-        . "Secret Santa app made by Phuse (http://secretsanta.phuse.ca).\n\n\n\n"
 
         . "---------------------------------\n"
+        . "Secret Santa app made by Phuse (http://secretsanta.phuse.ca)\n\n"
         . "This is a system generated email. Please do not reply to this email. Questions or comments should be directed to the event host via the email noted above."
       );
 

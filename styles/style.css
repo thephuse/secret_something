@@ -125,8 +125,14 @@ footer {
     display: inline-block; }
     footer li.right {
       margin-left: 10px; }
+      footer li.right.github {
+        margin-left: -25px; }
   footer img {
     margin: 0 5px -6px 0; }
+  footer .footnote {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center; }
 
 /* @group Sections
 ----------------------------------------------- */
@@ -543,6 +549,8 @@ form input.half, .half {
           float: none;
           display: inline-block;
           margin-left: 0;
-          vertical-align: top; } }
+          vertical-align: top; }
+          footer ul li.right.github {
+            margin-left: 0; } }
 
 /*# sourceMappingURL=style.css.map */

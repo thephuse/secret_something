@@ -175,10 +175,18 @@ footer {
     display: inline-block;
     &.right {
       margin-left: 10px;
+      &.github {
+        margin-left: -25px;
+      }
     }
   }
   img {
     margin: 0 5px -6px 0;
+  }
+  .footnote {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -763,6 +771,9 @@ $dropdown-caret-color:           #000;
           display: inline-block;
           margin-left: 0;
           vertical-align: top;
+          &.github {
+            margin-left: 0;
+          }
         }
       }
     }

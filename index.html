@@ -11,6 +11,9 @@
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Elsie:400,900' rel='stylesheet' type='text/css'>
 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
   <!--[if lte IE 11]>
     <style>
       .btn, a.btn {
@@ -44,21 +47,18 @@
     <div class="content">
       <h1>Secret Santa</h1>
       <div class="intro">
-        <p>Need a quick, modern way to organize a Secret Santa or similar gift exchange for your holiday celebrations? You've come to the right place!</p>
+        <p>Need a quick, modern way to organize a Secret Santa or similar gift exchange for your holiday celebrations? You’ve come to the right place!</p>
 
-        <p><a href="http://phuse.ca" target="_blank">Phuse</a> made this simple app to help automate the process for your family, friends or remote team. <a href="https://github.com/thephuse/secret_something" target="_blank">Find, use, or contribute to the code on GitHub</a>.</p>
+        <p><a href="http://phuse.ca" target="_blank">Phuse</a> made this simple app to help automate the process for your family, friends or remote team.</p>
 
-        <p>Here’s what you need:</p>
+        <p>Here's what you need:</p>
         <ul>
-          <li>A group of amazing people you love.</li>
-          <li>The full name and email address of each person.</li>
-          <li>A way to distribute the gifts. If physical mailing addresses are needed, distribute those privately (one mass email will do the trick!)</li>
+          <li>The full names and email addresses of at least 3 people.</li>
           <li>A date your exchange will take place (i.e. Dec 24th).</li>
+          <li>A way to distribute the gifts. If physical mailing addresses are needed, send those out privately (one mass email will do the trick!)</li>
         </ul>
 
         <p>After filling in your information on the screens that follow, participants will be notified by email about their match and the date of the event!</p>
-
-        <p>Technical note: This app doesn’t store any data. Emails are sent via <a href="http://mandrillapp.com" target="_blank">Mandrill</a>.</p>
 
         <p>Happy gifting!</p>        
       </div>
@@ -132,11 +132,11 @@
     <i class="left-bottom ornament"></i><i class="middle-bottom"></i><i class="right-bottom ornament"></i>
     <div class="content">
       <h1>Success!</h1>
-      <p>Emails have been sent! Your gift exchange with <strong><span data-bind="text: members().length"></span> amazing people</strong> will take place on:</p> 
+      <p>Your gift exchange with <strong><span data-bind="text: members().length"></span> amazing people</strong> will take place on:</p> 
 
       <p class="event-date" data-bind="html: niceEventDate"></p>
 
-      <p>Thanks for using the <a href="https://github.com/thephuse/secret_something" target="_blank">Secret Santa</a> app.</p>
+      <p>Emails have been sent to everyone involved informing them of their match, the date the exchange will take place, and any other details you provided. <strong>Remember to send participants any physical mailing addresses needed privately!</strong></p>
 
       <p>Happy holidays from <a href="http://phuse.ca" target="_blank">Phuse</a>.</p>
 
@@ -148,10 +148,12 @@
   <nav>
     <ul>
       <li><img alt="Secret Santa" src="img/icon_phuse_gray.png"/>Merrily Made by <a href="http://phuse.ca"><strong>Phuse</strong></a></li>
+      <li class="right github"><iframe src="http://ghbtns.com/github-btn.html?user=thephuse&repo=secret_something&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe></li>
       <li class="right"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Make your holidays even better by hosting your own Secret Santa!">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
       <li class="right"><div class="fb-like" data-href="http://secretsanta.phuse.ca" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></li>
     </ul>
+    <p class="footnote">Technical note: This app doesn’t store any data. Emails are sent via <a href="http://mandrillapp.com" target="_blank">Mandrill</a>.</p>
   </nav>
 </footer>
 
