@@ -42,6 +42,9 @@ body {
 @-webkit-keyframes backgroundAnimate {
   to {
     background-position: 0 400px; } }
+.phuse-signature {
+  margin-top: 10px; }
+
 input, textarea {
   font-family: 'Arvo', serif;
   font-size: 15px;
