@@ -213,7 +213,7 @@ Class SecretSanta {
         . "Your organizer, " . $data->hostName .", included the following details for your reference:\n"
         . $data->desc ."\n\n"
 
-        . "Any additional questions can be directed to Matt (matt@thephuse.com).\n\n"
+        . "Any additional questions can be directed to " . $data->hostName ." (" . $data->hostEmail .").\n\n"
 
         . "Secret Santa app made by Phuse (http://secretsanta.phuse.ca).\n\n\n\n"
 
