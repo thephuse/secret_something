@@ -284,6 +284,13 @@ form input.half, .half {
       border-color: #fe7d8a;
       color: #fff;
       background-image: url(../img/arrow_hover.png); }
+  .btn:active, a.btn:active {
+    background: #b8313f;
+    box-shadow: none; }
+    .btn:active span, a.btn:active span {
+      border-color: #ca656f;
+      color: #f9f0f1;
+      background-image: url(../img/arrow_active.png); }
   .btn.btn-icon, a.btn.btn-icon {
     font-size: 37px;
     line-height: 1.1;

@@ -37,6 +37,7 @@ $disabledgray: #dbdad9;
 $disabledgraylighter: #e4e4e3;
 $mediumpink: #a73843;
 $darkpink: #a73843;
+$clickpink: #b8313f;
 $shadow: #a73843;
 $darkgrey: #8a8e8e;
 $grey: #94979b;
@@ -357,6 +358,15 @@ form input.half, .half {
       border-color: #fe7d8a; 
       color: #fff;
       background-image: url(../img/arrow_hover.png);
+    }
+  }
+  &:active {
+    background: $clickpink;
+    box-shadow: none;
+    span {
+      border-color: #ca656f;
+      color: #f9f0f1;
+      background-image: url(../img/arrow_active.png);
     }
   }
   &.btn-icon {
