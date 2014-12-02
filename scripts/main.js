@@ -188,6 +188,7 @@ $(function () {
       $('#memberEmail').removeClass('disabled');
       if ( event.which == 13 ) { // if they hit the enter button, add the participant
         $('#participants-form .btn.add').trigger('click');
+        SetFocus();
       }
     } else {
       $('#memberEmail').addClass('disabled');
@@ -198,6 +199,11 @@ $(function () {
   });
 
 });
+
+function SetFocus () {
+  var input = document.getElementById ("memberName");
+  input.focus ();
+}
 
 /* 
   To easily add test data when testing form, uncomment the below code and fill in the following necessary information
