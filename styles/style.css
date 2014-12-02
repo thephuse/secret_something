@@ -278,10 +278,11 @@ form input.half, .half {
     font-size: 27px;
     padding-right: 5px; }
   .btn:hover, a.btn:hover {
-    background: #c04854;
-    box-shadow: 0 3px 0 #d29ba0; }
+    background: #fd5163;
+    box-shadow: 0 2px 0 #a73843; }
     .btn:hover span, a.btn:hover span {
-      border-color: #f1b9be;
+      border-color: #fe7d8a;
+      color: #fff;
       background-image: url(../img/arrow_hover.png); }
   .btn.btn-icon, a.btn.btn-icon {
     font-size: 37px;
@@ -296,7 +297,7 @@ form input.half, .half {
     background: #df4958;
     box-shadow: none; }
     .btn.dark:hover, .btn.btn-icon:hover, a.btn.dark:hover, a.btn.btn-icon:hover {
-      background: #d29ba0; }
+      background: #a73843; }
   .btn.disabled, a.btn.disabled {
     cursor: default;
     background: #dbdad9;
@@ -308,6 +309,7 @@ form input.half, .half {
   .btn span, a.btn span {
     border-radius: 2px;
     border: 1px solid #e77782;
+    color: #fcf1f2;
     padding: 15px 91px 12px 62px;
     background-image: url(../img/arrow.png);
     background-position: right 58px top 20px;
