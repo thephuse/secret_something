@@ -212,8 +212,9 @@ Class SecretSanta {
         
         . $data->desc ."\n\n"
 
-        . "Any additional questions can be directed to " . $data->hostName ." (" . $data->hostEmail .").\n\n\n\n"
+        . "Any additional questions can be directed to " . $data->hostName ." (" . $data->hostEmail .").\n\n"
 
+        . "Helpful tip: If you will be shipping your gift to your recipient, remember to budget in shipping times and costs as well as any customs declaration fees that may be incurred if shipping to a different country.\n\n\n\n"
 
         . "---------------------------------\n"
         . "Secret Santa app made by Phuse (http://secretsanta.phuse.ca)\n\n"

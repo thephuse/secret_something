@@ -1,2 +1,3 @@
-*.scssc
+.sass-cache
 mail-config.php
+sftp-config.json
